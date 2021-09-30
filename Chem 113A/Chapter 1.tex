@@ -1,0 +1,247 @@
+\documentclass[letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{etoolbox}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{titlesec}
+\usepackage{caption}
+\usepackage{placeins}
+\usepackage{float}
+\usepackage{array}
+\usepackage{units}
+\usepackage{listings}
+
+\titleformat*{\section}{\fontsize{14}{17}\bfseries}
+\titleformat*{\subsection}{\fontsize{11}{14}\bfseries}
+\titleformat*{\subsubsection}{\fontsize{10}{12}\bfseries}
+\makeatletter
+\begin{document}
+\newpage
+\section*{Chapter 1}
+\subsection*{Boltzmann Distribution}
+\begin{equation*}
+    N_i=\frac{N_0 g_i e^{-\epsilon_i/kT}}{\Sigma g_i e^{-\epsilon_i/kT}}
+\end{equation*}
+where $g_i$ is degeneracy of state $i$.
+And the differential probability would be
+\begin{equation*}
+    dP_{\epsilon t} = \frac{dn_{\epsilon t}}{N} = \frac{g_{\epsilon i} e^{-\epsilon i/kT}
+    d\epsilon_t}{\int g_{\epsilon i} e^{-\epsilon i/kT}d\epsilon_t}
+\end{equation*}
+\subsubsection*{Equipartition Principle}
+Every degree of freedom that appears only quadratically in the total energy has an average 
+energy of $\frac{1}{2}kT$ in thermal equilibrium.
+\begin{equation*}
+    \begin{aligned}
+        \epsilon _t &= \epsilon _t(x) + \epsilon _t(y) + \epsilon _t(z) \\
+        &= \frac{1}{2}mv_x^2 + \frac{1}{2}mv_y^2 + \frac{1}{2}mv_z^2 \\
+        &= \frac{3}{2}kT
+    \end{aligned}
+\end{equation*}
+\subsubsection*{Velocity Distribution in the x-direction}
+\begin{equation*}
+    \begin{aligned}
+        dP_{vx} &= \frac{dn_{vx}}{N} = \frac{e^{-\frac{1}{2}mv_x^2}/kT}{\int_{-\infty}^{\infty}
+        e^{-\frac{1}{2}mv_x^2/kT}dv_x}
+    \end{aligned}
+\end{equation*}
+Applying the integral value
+\begin{equation*}
+    I = \int_{-\infty}^{\infty}e^{-ax^2}dx=\sqrt{\frac{\pi}{a}}
+\end{equation*}
+The original integral becomes
+\begin{equation*}
+    \begin{aligned}
+        I &= \int_{-\infty}^{\infty}e^{-\frac{1}{2}mv_x^2/kT}dv_x\\
+        &= \sqrt{\frac{2kT\pi}{m}}
+    \end{aligned}
+\end{equation*}
+Plugging the value back to the differential probability.
+\begin{equation*}
+    \begin{aligned}
+        dP_{vx}=\sqrt{\frac{m}{2kT\pi}}e^{-\frac{mv_x^2}{kT}}dv_x
+    \end{aligned}
+\end{equation*}
+\begin{equation*}
+    f(v_x)=\sqrt{\frac{m}{2kT\pi}}e^{-\frac{mv_x^2}{kT}}
+\end{equation*}
+\subsubsection*{Velocity Distribution in Space}
+\begin{equation*}
+    \begin{aligned}
+        dP_v&=dP_{vx}dP_{vy}dP_{vz}\\
+        &=\frac{e^{-\frac{mv_x^2}{2kT}}e^{-\frac{mv_y^2}{2kT}}e^{-\frac{mv_z^2}{2kT}}}
+        {\int_{vx}...\int_{vy}...\int_{vz}...}\\
+        &=(\frac{m}{2\pi kT})^{\frac{3}{2}}e^{\frac{1}{2kT}m(v_x^2+v_y^2+v_z^2)}
+        dv_xdv_ydv_z
+    \end{aligned}
+\end{equation*}
+The velocity components can be expressed as
+\begin{equation*}
+    \begin{aligned}
+        &v_x=v\sin\theta\cos\theta\\
+        &v_y=v\sin\theta\sin\theta\\
+        &v_z=v\cos\theta
+    \end{aligned}
+\end{equation*}
+Using chain rule, we can get
+\begin{equation*}
+    dv_xdv_ydv_z=v^2dv\sin\theta d\theta d\Phi
+\end{equation*}
+\begin{equation*}
+    \begin{aligned}
+        dP_v=(\frac{m}{2\pi kT})^{\frac{3}{2}}e^{-\frac{mv^2}{2kT}}v^2dv\sin\theta d\theta d\Phi
+    \end{aligned}
+\end{equation*}
+Integrate with respect to $\theta$ and $\Phi$
+\begin{equation*}
+    \int_{0}^{2\pi}\int_{0}^{\pi}\sin\theta d\theta d\Phi=4\pi
+\end{equation*}
+\begin{equation*}
+    dP_v=4\pi(\frac{m}{2\pi kT})^{\frac{3}{2}}e^{-\frac{mv^2}{2kT}}dv
+\end{equation*}
+Then we can get the distribution
+\begin{equation*}
+    f(v)=4\pi v^2(\frac{m}{2\pi kT})^{\frac{3}{2}}e^{-\frac{mv^2}{2kT}}
+\end{equation*}
+\subsubsection*{Most Probable Value of Velocity Distribution}
+The most probable value comes when $\frac{\partial f(v)}{\partial v}=0$
+\begin{equation*}
+    \begin{aligned}
+        \frac{\partial f(v)}{\partial v}&=\frac{\partial}{\partial v}
+        [4\pi v^2(\frac{m}{2\pi kT})^{\frac{3}{2}}e^{-\frac{mv^2}{2kT}}]\\
+        &=2v\times 4\pi(\frac{m}{2\pi kT})^{\frac{3}{2}}e^{-\frac{mv^2}{2kT}}+
+        4\pi v^2(\frac{m}{2\pi kT})^{\frac{3}{2}}(-\frac{mv}{kT})e^{-\frac{mv^2}{2kT}}
+        =0
+    \end{aligned}
+\end{equation*}
+Solving the equation
+\begin{equation*}
+    \begin{aligned}
+        2v\times 4\pi + v^2 4\pi(-\frac{mv}{kT})&=0\\
+        2-v^2(\frac{m}{kT})&=0
+    \end{aligned}
+\end{equation*}
+\begin{equation*}
+    v_{mp}=\sqrt{\frac{2kT}{m}}
+\end{equation*}
+\subsubsection*{Average Speed}
+The expected value of speed is the sum of all probabilities time corresponding
+speed values over 0 to $\infty$.
+\begin{equation*}
+    \begin{aligned}
+        \bar{v}&=\int_0^\infty vdP_v=\int_0^\infty vf(v)dv\\
+        &=4\pi(\frac{m}{2\pi kT})^\frac{3}{2}\int_0^\infty v^3 e^{-\frac{mv^2}{2kT}}dv
+    \end{aligned}
+\end{equation*}
+Using the integral that
+\begin{equation*}
+    I=\int_0^\infty x^{2n+1}e^{-ax^2}dx=\frac{n!}{2a^{n+1}}
+\end{equation*}
+The expression becomes
+\begin{equation*}
+    \begin{aligned}
+        \bar{v}&=4\pi(\frac{m}{2\pi kT})^\frac{3}{2}\times \frac{1}{2}(\frac{2kT}{m})^2\\
+        &=\sqrt{\frac{8kT}{\pi m}}
+    \end{aligned}
+\end{equation*}
+\subsubsection*{Velocity Predicted by Equipartition Theorem}
+\begin{equation*}
+    \begin{aligned}
+        &\frac{1}{2}mv^2=\frac{3}{2}kT\\
+        &v_{ep}=\sqrt{\frac{3kT}{m}}
+    \end{aligned}
+\end{equation*}
+\subsection*{Collisions}
+There are two types of collisions. One is collisions with other molecules, which is related
+to a concept called mean free path. The other one is collisions with wall, which is related
+to pressure.
+\subsubsection*{Mean Free Path}
+For two molecules with average speed $\bar{v_1}$ and $\bar{v_2}$, the relative speed $\bar{v_{12}}$ is
+\begin{equation*}
+    \bar{v_{12}}=\bar{v_1}^2+\bar{v_2}^2-2\bar{v_1}\bar{v_2}\int_0^{2\pi}\cos\theta d\theta=\bar{v_1}^2+\bar{v_2}^2
+\end{equation*}
+The cross-section area of collision is
+\begin{equation*}
+    \sigma=\pi d^2
+\end{equation*}
+The frequency of collision is
+\begin{equation*}
+    z=\sigma\bar{v_{12}}n=\sqrt{2}\bar{v}d^2\pi n
+\end{equation*}
+The mean free path will be mean speed divided by frequency of collision
+\begin{equation*}
+    \lambda=\frac{\bar{v}}{z}=\frac{1}{\sqrt{2}\pi d^2n}
+\end{equation*}
+\subsubsection*{Pressure}
+The basic definition of pressure is force per unit area. And the force can be expressed as change of momentum.
+For $j$th molecule, the force in x-direction is
+\begin{equation*}
+    \bar{F_{xj}}=\frac{\partial}{\partial t}m\bar{v_{xj}}
+\end{equation*}
+We assume that in $\partial t$, the molecule travels distance of $2a$, and the momentum change is $2m\bar{v_{xj}}$.
+The force can then be expressed as
+\begin{equation*}
+    \bar{F_{xj}}=2m\bar{v_{xj}}\frac{\bar{v_{xj}}}{2a}=\frac{m\bar{v_{xj}}^2}{a}
+\end{equation*}
+Thus, the pressure expression is
+\begin{equation*}
+    P_{xj}=\frac{\bar{F_{xj}}}{A}=\frac{m\bar{v_{xj}}^2}{Aa}=\frac{m\bar{v_{xj}}^2}{V}
+\end{equation*}
+Considering all directions, $\bar{v}^2$ will be 3 times $\bar{v_x}^2$ because there are 3 directions in space.
+\begin{equation*}
+    P=\sum_{n=1}^{N}P_j=\sum_{n=1}^{N}\frac{1}{3}\frac{m\bar{v}^2}{V}=\frac{N}{3}\frac{m\bar{v}^2}{V}
+\end{equation*}
+Because of equipartition theorem that $mv^2=3kT$, thus
+\begin{equation*}
+    \begin{aligned}
+        &P=\frac{NkT}{V}\\
+        &PV=NkT
+    \end{aligned}
+\end{equation*}
+When using gas contant, the expression becomes ideal gas equation
+\begin{equation*}
+    PV=nRT
+\end{equation*}
+where $k=\frac{R}{N_A}$.
+\subsection*{Real Gas}
+Compared to ideal gas, real molecules have some different properties. Real gas molecules have volume, and the collision
+between them is inelastic, these molecules also interact with each other.
+For real gas, the compression factor $z$ is given by
+\begin{equation*}
+    z=\frac{V_r}{V_\circ}
+\end{equation*}
+where $V_r$ is real volume and $V_\circ$ is predicted volume.\\
+When $z$ is smaller than 1, the attraction between molecules dominates. When $z$ is greater than 1, the repulsion dominates.
+\subsubsection*{Virial Equation for Real Gases}
+The ideal gas equation can be rearranged to
+\begin{equation*}
+    P=\frac{RT}{V_m}
+\end{equation*}
+where $V_m$ is the molar volume.\\
+We use series expansion to approximate the behavior of real gases.
+\begin{equation*}
+    P=\frac{RT}{V_m}(1 + \frac{B'P}{V_m} + \frac{C'P^2}{V_m^2} ...)
+\end{equation*}
+As pressure is proportional to temperature, $P$ in the expansion terms can be rewritten as function of temperature.
+\begin{equation*}
+    P=\frac{RT}{V_m}(1+\frac{B(T)}{V_m}+\frac{C(T)}{V_m}...)
+\end{equation*}
+\subsubsection*{Van der Waals Correction}
+Van der Waals proposed two correction temrs to the original equation.
+\begin{equation*}
+    \begin{aligned}
+        P&=\frac{nRT}{V-nb}-\frac{an^2}{V^2}\\
+        &=\frac{RT}{V_m-b}-\frac{a}{V_m^2}\\
+        &=\frac{RT}{V_m}(1-\frac{b}{V_m})^{-1}-\frac{a}{V_m^2}
+    \end{aligned}
+\end{equation*}
+Using the expansion of $(1-x)^{-1}$
+\begin{equation*}
+    (1-x)^{-1}=1+x+x^2+...
+\end{equation*}
+\begin{equation*}
+    P=\frac{RT}{V_m}(1+\frac{b-\frac{a}{RT}}{V_m}+\frac{b^2}{V_m^2}+...)
+\end{equation*}
+\end{document}
