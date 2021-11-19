@@ -4,6 +4,7 @@
 \usepackage{lmodern}
 \usepackage[margin=1in]{geometry}
 \usepackage{mhchem}
+\usepackage{indentfirst}
 
 \newcommand{\diff}{\mathrm{d}}
 
@@ -19,6 +20,7 @@ The internal energy of an isolated system is conserved.
         &\Delta U(\mathrm{system})=-\Delta U(\mathrm{surrounding})
     \end{aligned}
 \end{equation*}
+
 Also,
 \begin{equation*}
     \Delta U=w+q
@@ -26,16 +28,19 @@ Also,
 \begin{equation*}
     \diff U=\delta w+\delta q
 \end{equation*}
+
 The work $w$ refers to mechanical work, or PV work.
 \subsubsection*{Isochoric Process}
 Consider an isochoric process,
 \begin{equation*}
     \diff U=\delta q + \delta w = \delta q - P\diff V
 \end{equation*}
+
 because the volume doesn't change, d$V=0$,
 \begin{equation*}
     \diff U_V=\delta q_V
 \end{equation*}
+
 because $C_V=\frac{\delta q_V}{\delta T}=\frac{\delta q_V}{\diff T}$,
 \begin{equation*}
     \diff U_V=C_V\diff T
@@ -48,6 +53,7 @@ We define a new variable enthalpy (H).
 \begin{equation*}
     H=U+PV
 \end{equation*}
+
 Differentiating both sides,
 \begin{equation*}
     \begin{aligned}
@@ -56,6 +62,7 @@ Differentiating both sides,
         &=\diff U+P\diff V+V\diff P
     \end{aligned}
 \end{equation*}
+
 Plugging in $\diff U=\delta q-P\diff V$,
 \begin{equation*}
     \begin{aligned}
@@ -63,6 +70,7 @@ Plugging in $\diff U=\delta q-P\diff V$,
         &=\delta q+V\diff P
     \end{aligned}
 \end{equation*}
+
 Under isobaric condition, where $\diff P=0$,
 \begin{equation*}
     \begin{aligned}
@@ -70,10 +78,12 @@ Under isobaric condition, where $\diff P=0$,
         &=C_P\diff T
     \end{aligned}
 \end{equation*}
+
 Thus,
 \begin{equation*}
     \boxed{C_P=(\frac{\partial H}{\partial T})_P}
 \end{equation*}
+
 For reversible isobaric expansion,
 \begin{equation*}
     w=-P_{ext}\int_{V_1}^{V_2}\diff V=P_{ext}\Delta V
@@ -83,22 +93,27 @@ From derivation in isobaric process, we know
 \begin{equation*}
     C_P\diff T=\diff U+P\diff V
 \end{equation*}
+
 And from derivation in isochoric process, we know
 \begin{equation*}
     \diff U=C_V\diff T
 \end{equation*}
+
 Thus,
 \begin{equation*}
     C_P\diff T=C_V\diff T+P\diff V
 \end{equation*}
+
 By differentiating ideal gas law,
 \begin{equation*}
     P\diff V+V\diff P=nR\diff T
 \end{equation*}
+
 At constant pressure, this becomes
 \begin{equation*}
     P\diff V=nR\diff T
 \end{equation*}
+
 Then,
 \begin{equation*}
     C_P\diff T=C_V\diff T+nR\diff T
@@ -106,6 +121,7 @@ Then,
 \begin{equation*}
     \boxed{C_P=C_V+nR}
 \end{equation*}
+
 For monatomic ideal gas,
 \begin{equation*}
     C_V=(\frac{\partial U}{\partial T})_V=\frac{3}{2}nR
@@ -113,6 +129,7 @@ For monatomic ideal gas,
 \begin{equation*}
     C_P=C_V+nR=\frac{5}{2}nR
 \end{equation*}
+
 Or in terms of molar heat capacity,
 \begin{equation*}
     c_P=c_V+R
@@ -130,6 +147,7 @@ Adiabatic condition implies $\delta q=0$
         &=-p\diff V=C_V\diff T
     \end{aligned}
 \end{equation*}
+
 Thus,
 \begin{equation*}
     \begin{aligned}
@@ -137,6 +155,7 @@ Thus,
         C_V\frac{\diff T}{T}&=-nR\frac{\diff V}{V}
     \end{aligned}
 \end{equation*}
+
 Considering the initial condition $V_i$ and $T_i$, the final condition $V_f$ and $T_f$,
 \begin{equation*}
     C_V\int_{T_i}^{T_f}\frac{\diff T}{T}=-nR\int_{V_i}^{V_f}\frac{\diff V}{V}
@@ -147,6 +166,7 @@ Considering the initial condition $V_i$ and $T_i$, the final condition $V_f$ and
 \begin{equation*}
     \ln\frac{T_f}{T_i}=-(\frac{C_P}{C_V}-1)\ln\frac{V_f}{V_i}
 \end{equation*}
+
 We define $\gamma=\frac{C_P}{C_V}=\frac{c_P}{c_V}$,
 \begin{equation*}
     \ln\frac{T_f}{T_i}=-(\gamma-1)\ln\frac{V_f}{V_i}
@@ -168,19 +188,23 @@ For a chemical reaction at standard condition,
 \begin{equation*}
     \nu_AA+\nu_BB\rightleftharpoons\nu_CC+\nu_DD
 \end{equation*}
+
 The enthalpy change of reaction is
 \begin{equation*}
     \Delta_rH^\circ=\sum_P\nu_P\Delta_fH^\circ_P-\sum_R\nu_R\Delta_fH^\circ_R
 \end{equation*}
+
 \subsubsection*{Temperature Dependence}
 Because $\diff H=C_P\diff T$, we can write
 \begin{equation*}
     H(T_2)=H(T_1)+\int_{T_1}^{T_2}C_P\diff T
 \end{equation*}
+
 Applying it to the enthalpy change of reaction yield Kirchhoff’s law.
 \begin{equation*}
     \Delta_rH(T_2)=\Delta_rH(T_1)+\int_{T_1}^{T_2}\Delta_rC_P\diff T
 \end{equation*}
+
 If $C_P$ is independent of temperature, Kirchhoff’s law can be simplified to
 \begin{equation*}
     \Delta_rH(T_2)=\Delta_rH(T_1)+\Delta_rC_P(T_2-T_1)
@@ -193,10 +217,12 @@ The work is composed of work from upstream and downstream gases, denoted as $w_1
 \begin{equation*}
     w_2=-P_2(V_2-0)=-P_2V_2
 \end{equation*}
+
 Thus,
 \begin{equation*}
     w=P_1V_1-P_2V_2
 \end{equation*}
+
 Because no heat is transferred ($q=0$), the change of internal energy equals to work.
 \begin{equation*}
     \Delta U=U_2-U_1=P_1V_1-P_2V_2
@@ -204,23 +230,28 @@ Because no heat is transferred ($q=0$), the change of internal energy equals to 
 \begin{equation*}
     U_2+P_2V_2=U_1+P_1V_1
 \end{equation*}
-And this yields $H_1=H_2$.\\
+And this yields $H_1=H_2$.
+
 We know the equation
 \begin{equation*}
     \diff H=(\frac{\partial H}{\partial T})_P\diff T+(\frac{\partial H}{\partial P})_T\diff P
 \end{equation*}
+
 And because the process is isoenthalpic, which means $\Delta H=0$
 \begin{equation*}
     0=C_P\diff T+(\frac{\partial H}{\partial P})_T\diff P
 \end{equation*}
+
 Then, rearrange this equation
 \begin{equation*}
     (\frac{\partial H}{\partial P})_T=-C_P(\frac{\partial T}{\partial P})_H
 \end{equation*}
+
 We define the Joule–Thomson coefficient $\mu$ as
 \begin{equation*}
     \mu=(\frac{\partial T}{\partial P})_H
 \end{equation*}
+
 So the change of enthalpy with respect to pressure can be written as
 \begin{equation*}
     \boxed{(\frac{\partial H}{\partial P})_T=-C_P\mu}

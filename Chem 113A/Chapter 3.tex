@@ -1,0 +1,205 @@
+\documentclass[letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{mhchem}
+\usepackage{indentfirst}
+
+\newcommand{\diff}{\mathrm{d}}
+\newcommand{\zero}{^\circ}
+
+\makeatletter
+\begin{document}
+\newpage
+\section*{Chapter 3}
+\subsection*{Entropy}
+Entropy is a measure of randomness. The statistical definition of entropy is
+\begin{equation*}
+    s=k\ln\mathcal{W}
+\end{equation*}
+
+The thermodynamic definition is
+\begin{equation*}
+    \Delta S=\frac{q_{rev}}{T}
+\end{equation*}
+
+And $\Delta S$ is a state function
+
+\subsubsection*{The Second Law of Thermodynamics}
+The total entropy of a spontaneous process is greater than zero.\\
+
+The definition can be also written in differential form
+\begin{equation*}
+    \diff S=\frac{\delta q_{rev}}{T}
+\end{equation*}
+
+\subsubsection*{Clausius Inequality}
+From the first law,
+\begin{equation*}
+    |\diff w_{rev}|\geq|\diff w|
+\end{equation*}
+
+For system doing work, $\diff w_{rev}$ is always negative, so
+\begin{equation*}
+    -\diff w_{rev}\geq-\diff w
+\end{equation*}
+\begin{equation*}
+    \diff w - \diff w_{rev}\geq0
+\end{equation*}
+
+Thus,
+\begin{equation*}
+    \delta q_{rev}-\delta q\geq0
+\end{equation*}
+\begin{equation*}
+    \frac{\delta q_{rev}}{T}\geq\frac{\delta q}{T}
+\end{equation*}
+
+Using the definition of $\diff S$, we can get
+\begin{equation*}
+    \boxed{\diff S\geq\frac{\delta q}{T}}
+\end{equation*}
+
+\subsection*{Maxwell Relation}
+Because
+\begin{equation*}
+    \diff U=\delta w+\delta q=\delta w_{rev}+\delta q_{rev}
+\end{equation*}
+\begin{equation*}
+    \delta w-\delta w_{rev}=\delta q_{rev} - \delta q
+\end{equation*}
+
+For reversible changes,
+\begin{equation*}
+    \delta q_{rev} = T\diff S
+\end{equation*}
+\begin{equation*}
+    \delta w_{rev} = -P\diff V
+\end{equation*}
+
+Thus,
+\begin{equation*}
+    \diff U=T\diff S-P\diff V
+\end{equation*}
+
+And we know that,
+\begin{equation*}
+    \diff U=(\frac{\partial U}{\partial S})_V\diff S+(\frac{\partial U}{\partial V})_S\diff V
+\end{equation*}
+
+By comparing these two expressions, it's obvious that
+\begin{equation*}
+    T=(\frac{\partial U}{\partial S})_V
+\end{equation*}
+\begin{equation*}
+    P=-(\frac{\partial U}{\partial V})_S
+\end{equation*}
+
+From a property of exact differential that
+\begin{equation*}
+    (\frac{\partial g(x, y)}{\partial y})_x=(\frac{\partial h(x, y)}{\partial y})_y
+\end{equation*}
+
+We can write similar equation
+\begin{equation*}
+    (\frac{\partial}{\partial V}(\frac{\partial U}{\partial S})_V)_S=
+    (\frac{\partial}{\partial S}(\frac{\partial U}{\partial V})_S)_V
+\end{equation*}
+
+So,
+\begin{equation*}
+    (\frac{\partial T}{\partial V})_S=-(\frac{\partial P}{\partial S})_V
+\end{equation*}
+which is one of Maxwell relations
+
+\subsubsection*{Internal Pressure}
+We define the internal pressure $\pi_T$ equals to $(\frac{\partial U}{\partial V})_T$.
+From the definition $\diff U=T\diff S-P\diff V$, we can get
+\begin{equation*}
+    \begin{aligned}
+        (\frac{\partial U}{\partial V})_T&=T(\frac{\partial S}{\partial V})-P\\
+        &=(\frac{\partial U}{\partial S})_V(\frac{\partial S}{\partial V})_T+ (\frac{\partial U}{\partial V})_S
+    \end{aligned}
+\end{equation*}
+
+Substituting Maxwell relations again,
+\begin{equation*}
+    \pi_T=T(\frac{\partial P}{\partial T})_V-P
+\end{equation*}
+
+\subsection*{Gibbs Free Energy}
+The Gibbs free energy is defined as
+\begin{equation*}
+    G=H-TS=U+PV-TS
+\end{equation*}
+
+When taking derivatives,
+\begin{equation*}
+    \begin{aligned}
+        \diff G&=\diff U+P\diff V+V\diff P-T\diff S-S\diff T\\
+        &=T\diff S-P\diff V+P\diff V+V\diff P-T\diff S-S\diff T\\
+        &=V\diff P-S\diff T
+    \end{aligned}
+\end{equation*}
+
+At constant temperature and pressure, $\diff U=\diff H$.
+And from Clausius inequality, we can write
+\begin{equation*}
+    \diff S-\frac{\diff H}{T}\geq0
+\end{equation*}
+
+So,
+\begin{equation*}
+    T\diff S-\diff H\geq0
+\end{equation*}
+\begin{equation*}
+    T\diff S-V\diff P-T\diff S\geq0
+\end{equation*}
+\begin{equation*}
+    \diff G\leq0
+\end{equation*}
+
+For a spontaneous process, $\diff G$ is always less than or equal to 0 at constant temperature and pressure
+
+\subsubsection*{Variation of Gibbs Energy with Temperature}
+Because
+\begin{equation*}
+    \diff G=(\frac{\partial G}{\partial T})_P\diff T+(\frac{\partial G}{\partial P})_T\diff P
+\end{equation*}
+\begin{equation*}
+    V=(\frac{\partial G}{\partial P})_T
+\end{equation*}
+\begin{equation*}
+    -S=(\frac{\partial G}{\partial T})_p
+\end{equation*}
+
+Because $S=\frac{H-G}{T}$, we can get
+\begin{equation*}
+    (\frac{\partial G}{\partial T})_p=\frac{G-H}{T}
+\end{equation*}
+
+After several derivation, we can get Gibbs-Helmholtz equation.
+\begin{equation*}
+    \boxed{(\frac{\partial (G/T)}{\partial T})_P=-\frac{H}{T^2}}
+\end{equation*}
+
+\subsubsection*{Variation of Gibbs Energy with Pressure}
+In this situation, temperature is constant, so
+\begin{equation*}
+    \diff G=V\diff T
+\end{equation*}
+
+When pressure changes from $P\zero$ to $P$, we integrate both sides
+\begin{equation*}
+    \int_{P\zero}^{P}\diff G=\int_{P\zero}^{P}V\diff P
+\end{equation*}
+
+Assuming ideal behavior, which means $PV=nRT$, we can get
+\begin{equation*}
+    G=G\zero + nRT\ln\frac{P}{P\zero}
+\end{equation*}
+\begin{equation*}
+    G_m=G_m\zero+RT\ln\frac{P}{P\zero}
+\end{equation*}
+\end{document}

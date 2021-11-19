@@ -1,0 +1,80 @@
+\documentclass[letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{mhchem}
+\usepackage{indentfirst}
+
+\newcommand{\diff}{\mathrm{d}}
+\newcommand{\zero}{^\circ}
+
+\makeatletter
+\begin{document}
+\newpage
+\section*{Chapter 6}
+\subsection*{Equilibrium Constant}
+For a chemical reaction, the change of Gibbs energy is
+\begin{equation*}
+    \Delta_rG=\sum_p(\mu_p\zero+RT\ln\frac{P_p}{P\zero})-\sum_r(\mu_r\zero+RT\ln\frac{P_r}{P\zero})
+\end{equation*}
+\begin{equation*}
+    \Delta_rG=\Delta_rG\zero+RT\ln\frac{\prod_p(\frac{P_p}{P_0})^{\nu_p}}{\prod_r(\frac{P_r}{P_0})^{\nu_r}}
+\end{equation*}
+
+We define the reaction quotient $Q$ as $\frac{\prod_p(\frac{P_p}{P_0})^{\nu_p}}{\prod_r(\frac{P_r}{P_0})^{\nu_r}}$
+, so
+\begin{equation*}
+    \Delta_rG=\Delta_rG\zero+RT\ln Q
+\end{equation*}
+
+When at equilibrium, $\Delta_rG=0$, so $\Delta_rG\zero=-RT\ln Q_{eq}$.
+\begin{equation*}
+    \Delta_rG\zero=\frac{\prod_p(\frac{P_p^{eq}}{P_0})^{\nu_p}}
+    {\prod_r(\frac{P_r^{eq}}{P_0})^{\nu_r}}P\zero^{\Delta\nu}
+\end{equation*}
+
+$\Delta\nu$ is the change of stoichiometric coefficient in the reaction that
+\begin{equation*}
+    \Delta\nu = \sum_p\nu_p-\sum_r\nu_r
+\end{equation*}
+
+By convention, we define the equilibrium constant as
+\begin{equation*}
+    K_p=\frac{\prod_p(\frac{P_p^{eq}}{P_0})^{\nu_p}}
+    {\prod_r(\frac{P_r^{eq}}{P_0})^{\nu_r}}P\zero^{\Delta\nu}
+\end{equation*}
+\subsection*{Variation of Equilibrium Constant with Temperature}
+We know that
+\begin{equation*}
+    \ln K_p=-\frac{\Delta_rG\zero}{RT}
+\end{equation*}
+
+Differetiating the equation gives
+\begin{equation*}
+    \frac{\partial\ln K_p}{\partial T}=-\frac{1}{R}(\frac{\Delta_rG\zero/T}{\partial T})
+\end{equation*}
+
+And the Gibbs-Helmholtz equation shows that
+\begin{equation*}
+    \frac{\Delta_rG\zero/T}{\partial T}=-\frac{\Delta_rH\zero}{T^2}
+\end{equation*}
+
+So, we get
+\begin{equation*}
+    \frac{\partial\ln K_p}{\partial T}=-\frac{\Delta_rH\zero}{T^2}
+\end{equation*}
+\begin{equation*}
+    \boxed{\frac{\diff\ln K_p}{\diff T}=\frac{\Delta_rH\zero}{RT^2}}
+\end{equation*}
+
+This is called van't Hoff equation.
+
+For the change from $T\zero$ to $T$, we integrate the equation that
+\begin{equation*}
+    \ln K_p(T)-\ln K_p(T\zero)=\int_{T\zero}^{T}\frac{\Delta_rH\zero}{RT^2}}
+\end{equation*}
+\begin{equation*}
+    \boxed{\ln K_p(T)=\ln K_p(T\zero)-\frac{\Delta_rH\zero}{R}(\frac{1}{T}-\frac{1}{T\zero})}
+\end{equation*}
+\end{document}

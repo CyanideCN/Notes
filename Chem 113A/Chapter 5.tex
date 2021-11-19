@@ -1,0 +1,120 @@
+\documentclass[letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{mhchem}
+\usepackage{indentfirst}
+
+\newcommand{\diff}{\mathrm{d}}
+\newcommand{\zero}{^\circ}
+
+\makeatletter
+\begin{document}
+\newpage
+\section*{Chapter 5}
+\subsection*{Partial Molar Quantities}
+\subsubsection*{Volume}
+The partial molar volume is defined as
+\begin{equation*}
+    V_j=(\frac{\partial V}{\partial n_j})_{T,P,n_i\neq n_j}
+\end{equation*}
+
+For a two-component system,
+\begin{equation*}
+    \diff V=(\frac{\partial V}{\partial n_A})_{T,P,n_b}\diff n_A
+    +(\frac{\partial V}{\partial n_B})_{T,P,n_A}\diff n_B
+\end{equation*}
+\begin{equation*}
+    \diff V=V_A\diff n_A+V_B\diff n_B
+\end{equation*}
+
+Thus,
+\begin{equation*}
+    V=V_An_A+V_Bn_B
+\end{equation*}
+\subsubsection*{Gibbs Free Energy}
+The partial molar Gibbs free energy is defined as chemical potential as discussed before.
+So,
+\begin{equation*}
+    \mu_j=(\frac{\partial G}{\partial n_j})_{T,P,n_i\neq n_j}
+\end{equation*}
+\begin{equation*}
+    G=n_A\mu_A+n_B\mu_B
+\end{equation*}
+\subsection*{Thermodynamics of Mixing}
+\subsubsection*{Mixing of Perfect Gas}
+As discussed in Chapter 3,
+\begin{equation*}
+    G_m=G_m\zero+RT\ln\frac{P}{P\zero}
+\end{equation*}
+
+In terms of chemical potential,
+\begin{equation*}
+    \mu=\mu\zero+RT\ln\frac{P}{P\zero}
+\end{equation*}
+
+Because $P_A=x_AP$ where $x$ is the mole fraction of A,
+\begin{equation*}
+    \mu_A^{mix}=\mu_A^{pure}+RT\ln x_A
+\end{equation*}
+
+And because $x_A$ ranges from 0 to 1, $\n x_A$ is never positive, so
+\begin{equation*}
+    \Delta G_{mix}\leq 0
+\end{equation*}
+
+This confirms the mixing process is spontaneous.
+
+Consider the mixing of gas A and gas B. In the initial condition where two gas are separated,
+the Gibbs energy is
+\begin{equation*}
+    G_1=n_A\mu_A+n_B\mu_B
+\end{equation*}
+
+And the Gibbs energy for mixture is
+\begin{equation*}
+    G_2=n_A(\mu_A+RT\ln x_A)+n_B(\mu_B+RT\ln x_B)
+\end{equation*}
+
+So, the change of Gibbs energy of mixing is
+\begin{equation*}
+    \Delta_{mix}G=n_ART\ln x_A+n_BRT\ln x_B
+\end{equation*}
+
+In general,
+\begin{equation*}
+    \Delta_{mix}G=\sum_in_iRT\ln x_i=nRT\sum_ix_i\ln x_i
+\end{equation*}
+\begin{equation*}
+    \Delta_{mix}S=\frac{-\Delta_{mix}G}{T}=-nR\sum_ix_i\ln x_i
+\end{equation*}
+\subsubsection*{Mixing of Liquid}
+For solution, there is an equilibrium of liquid and corresponding gas.
+\begin{equation*}
+    \mu_A^*(l)=\mu_A\zero(g)+RT\ln\frac{P_A^*}{P\zero}
+\end{equation*}
+
+At equilibrium, $\mu_A(l)=\mu_A(g)$, so
+\begin{equation*}
+    \mu_A\zero(g)=\mu_A^*-RT\ln\frac{P_A}{P\zero}
+\end{equation*}
+where $P_A^*$ is vapor pressure of pure A.
+
+When another substance B is added,
+\begin{equation*}
+    \begin{aligned}
+        \mu_A(l) & =\mu_A^*(l)-RT\ln\frac{P_A^*}{P\zero}+RT\ln\frac{P_A}{P\zero} \\
+                 & =\mu_A^*(l)+RT\ln\frac{P_A}{P_A^*}
+    \end{aligned}
+\end{equation*}
+
+From the Raolt's law where $P_A=x_AP_A^*$, we can write
+\begin{equation*}
+    \mu_A(l)=\mu_A^*(l)+RT\ln x_A
+\end{equation*}
+
+However, when solution is dilute, $P_A\propto x_A$, which is known as Henry's law.
+
+\subsection*{Colligative Properties}
+\end{document}
