@@ -16,23 +16,23 @@ where $g_i$ is degeneracy of state $i$.
 And the differential probability would be
 \begin{equation*}
     dP_{\epsilon t} = \frac{dn_{\epsilon t}}{N} = \frac{g_{\epsilon i} e^{-\epsilon i/kT}
-    d\epsilon_t}{\int g_{\epsilon i} e^{-\epsilon i/kT}d\epsilon_t}
+        d\epsilon_t}{\int g_{\epsilon i} e^{-\epsilon i/kT}d\epsilon_t}
 \end{equation*}
 \subsubsection*{Equipartition Principle}
-Every degree of freedom that appears only quadratically in the total energy has an average 
+Every degree of freedom that appears only quadratically in the total energy has an average
 energy of $\frac{1}{2}kT$ in thermal equilibrium.
 \begin{equation*}
     \begin{aligned}
-        \epsilon _t &= \epsilon _t(x) + \epsilon _t(y) + \epsilon _t(z) \\
-        &= \frac{1}{2}mv_x^2 + \frac{1}{2}mv_y^2 + \frac{1}{2}mv_z^2 \\
-        &= \frac{3}{2}kT
+        \epsilon _t & = \epsilon _t(x) + \epsilon _t(y) + \epsilon _t(z)          \\
+                    & = \frac{1}{2}mv_x^2 + \frac{1}{2}mv_y^2 + \frac{1}{2}mv_z^2 \\
+                    & = \frac{3}{2}kT
     \end{aligned}
 \end{equation*}
 \subsubsection*{Velocity Distribution in the x-direction}
 \begin{equation*}
     \begin{aligned}
-        dP_{vx} &= \frac{dn_{vx}}{N} = \frac{e^{-\frac{1}{2}mv_x^2}/kT}{\int_{-\infty}^{\infty}
-        e^{-\frac{1}{2}mv_x^2/kT}dv_x}
+        dP_{vx} & = \frac{dn_{vx}}{N} = \frac{e^{-\frac{1}{2}mv_x^2}/kT}{\int_{-\infty}^{\infty}
+            e^{-\frac{1}{2}mv_x^2/kT}dv_x}
     \end{aligned}
 \end{equation*}
 Applying the integral value
@@ -42,8 +42,8 @@ Applying the integral value
 The original integral becomes
 \begin{equation*}
     \begin{aligned}
-        I &= \int_{-\infty}^{\infty}e^{-\frac{1}{2}mv_x^2/kT}dv_x\\
-        &= \sqrt{\frac{2kT\pi}{m}}
+        I & = \int_{-\infty}^{\infty}e^{-\frac{1}{2}mv_x^2/kT}dv_x \\
+          & = \sqrt{\frac{2kT\pi}{m}}
     \end{aligned}
 \end{equation*}
 Plugging the value back to the differential probability.
@@ -58,19 +58,19 @@ Plugging the value back to the differential probability.
 \subsubsection*{Velocity Distribution in Space}
 \begin{equation*}
     \begin{aligned}
-        dP_v&=dP_{vx}dP_{vy}dP_{vz}\\
-        &=\frac{e^{-\frac{mv_x^2}{2kT}}e^{-\frac{mv_y^2}{2kT}}e^{-\frac{mv_z^2}{2kT}}}
-        {\int_{vx}...\int_{vy}...\int_{vz}...}\\
-        &=(\frac{m}{2\pi kT})^{\frac{3}{2}}e^{\frac{1}{2kT}m(v_x^2+v_y^2+v_z^2)}
+        dP_v & =dP_{vx}dP_{vy}dP_{vz}                                                             \\
+             & =\frac{e^{-\frac{mv_x^2}{2kT}}e^{-\frac{mv_y^2}{2kT}}e^{-\frac{mv_z^2}{2kT}}}
+        {\int_{vx}...\int_{vy}...\int_{vz}...}                                                    \\
+             & =\left(\frac{m}{2\pi kT}\right)^{\frac{3}{2}}e^{\frac{1}{2kT}m(v_x^2+v_y^2+v_z^2)}
         dv_xdv_ydv_z
     \end{aligned}
 \end{equation*}
 The velocity components can be expressed as
 \begin{equation*}
     \begin{aligned}
-        &v_x=v\sin\theta\cos\theta\\
-        &v_y=v\sin\theta\sin\theta\\
-        &v_z=v\cos\theta
+         & v_x=v\sin\theta\cos\theta \\
+         & v_y=v\sin\theta\sin\theta \\
+         & v_z=v\cos\theta
     \end{aligned}
 \end{equation*}
 Using chain rule, we can get
@@ -79,7 +79,7 @@ Using chain rule, we can get
 \end{equation*}
 \begin{equation*}
     \begin{aligned}
-        dP_v=(\frac{m}{2\pi kT})^{\frac{3}{2}}e^{-\frac{mv^2}{2kT}}v^2dv\sin\theta d\theta d\Phi
+        dP_v=\left(\frac{m}{2\pi kT}\right)^{\frac{3}{2}}e^{-\frac{mv^2}{2kT}}v^2dv\sin\theta d\theta d\Phi
     \end{aligned}
 \end{equation*}
 Integrate with respect to $\theta$ and $\Phi$
@@ -87,28 +87,29 @@ Integrate with respect to $\theta$ and $\Phi$
     \int_{0}^{2\pi}\int_{0}^{\pi}\sin\theta d\theta d\Phi=4\pi
 \end{equation*}
 \begin{equation*}
-    dP_v=4\pi(\frac{m}{2\pi kT})^{\frac{3}{2}}e^{-\frac{mv^2}{2kT}}dv
+    dP_v=4\pi\left(\frac{m}{2\pi kT}\right)^{\frac{3}{2}}e^{-\frac{mv^2}{2kT}}dv
 \end{equation*}
 Then we can get the distribution
 \begin{equation*}
-    f(v)=4\pi v^2(\frac{m}{2\pi kT})^{\frac{3}{2}}e^{-\frac{mv^2}{2kT}}
+    f(v)=4\pi v^2\left(\frac{m}{2\pi kT}\right)^{\frac{3}{2}}e^{-\frac{mv^2}{2kT}}
 \end{equation*}
 \subsubsection*{Most Probable Value of Velocity Distribution}
 The most probable value comes when $\frac{\partial f(v)}{\partial v}=0$
 \begin{equation*}
     \begin{aligned}
-        \frac{\partial f(v)}{\partial v}&=\frac{\partial}{\partial v}
-        [4\pi v^2(\frac{m}{2\pi kT})^{\frac{3}{2}}e^{-\frac{mv^2}{2kT}}]\\
-        &=2v\times 4\pi(\frac{m}{2\pi kT})^{\frac{3}{2}}e^{-\frac{mv^2}{2kT}}+
-        4\pi v^2(\frac{m}{2\pi kT})^{\frac{3}{2}}(-\frac{mv}{kT})e^{-\frac{mv^2}{2kT}}
+        \frac{\partial f(v)}{\partial v} & =\frac{\partial}{\partial v}
+        [4\pi v^2\left(\frac{m}{2\pi kT}\right)^{\frac{3}{2}}e^{-\frac{mv^2}{2kT}}]     \\
+                                         & =2v\times 4\pi\left(\frac{m}{2\pi kT}\right)
+        ^{\frac{3}{2}}e^{-\frac{mv^2}{2kT}}+4\pi v^2(\frac{m}{2\pi kT})^{\frac{3}{2}}
+        (-\frac{mv}{kT})e^{-\frac{mv^2}{2kT}}
         =0
     \end{aligned}
 \end{equation*}
 Solving the equation
 \begin{equation*}
     \begin{aligned}
-        2v\times 4\pi + v^2 4\pi(-\frac{mv}{kT})&=0\\
-        2-v^2(\frac{m}{kT})&=0
+        2v\times 4\pi + v^2 4\pi\left(-\frac{mv}{kT}\right) & =0 \\
+        2-v^2\left(\frac{m}{kT}\right)                      & =0
     \end{aligned}
 \end{equation*}
 \begin{equation*}
@@ -119,8 +120,8 @@ The expected value of speed is the sum of all probabilities time corresponding
 speed values over 0 to $\infty$.
 \begin{equation*}
     \begin{aligned}
-        \bar{v}&=\int_0^\infty vdP_v=\int_0^\infty vf(v)dv\\
-        &=4\pi(\frac{m}{2\pi kT})^\frac{3}{2}\int_0^\infty v^3 e^{-\frac{mv^2}{2kT}}dv
+        \bar{v} & =\int_0^\infty vdP_v=\int_0^\infty vf(v)dv                                               \\
+                & =4\pi\left(\frac{m}{2\pi kT}\right)^\frac{3}{2}\int_0^\infty v^3 e^{-\frac{mv^2}{2kT}}dv
     \end{aligned}
 \end{equation*}
 Using the integral that
@@ -130,15 +131,15 @@ Using the integral that
 The expression becomes
 \begin{equation*}
     \begin{aligned}
-        \bar{v}&=4\pi(\frac{m}{2\pi kT})^\frac{3}{2}\times \frac{1}{2}(\frac{2kT}{m})^2\\
-        &=\sqrt{\frac{8kT}{\pi m}}
+        \bar{v} & =4\pi\left(\frac{m}{2\pi kT}\right)^\frac{3}{2}\times \frac{1}{2}\left(\frac{2kT}{m}\right)^2 \\
+                & =\sqrt{\frac{8kT}{\pi m}}
     \end{aligned}
 \end{equation*}
 \subsubsection*{Velocity Predicted by Equipartition Theorem}
 \begin{equation*}
     \begin{aligned}
-        &\frac{1}{2}mv^2=\frac{3}{2}kT\\
-        &v_{ep}=\sqrt{\frac{3kT}{m}}
+         & \frac{1}{2}mv^2=\frac{3}{2}kT \\
+         & v_{ep}=\sqrt{\frac{3kT}{m}}
     \end{aligned}
 \end{equation*}
 \subsection*{Collisions}
@@ -184,8 +185,8 @@ Considering all directions, $\bar{v}^2$ will be 3 times $\bar{v_x}^2$ because th
 Because of equipartition theorem that $mv^2=3kT$, thus
 \begin{equation*}
     \begin{aligned}
-        &P=\frac{NkT}{V}\\
-        &PV=NkT
+         & P=\frac{NkT}{V} \\
+         & PV=NkT
     \end{aligned}
 \end{equation*}
 When using gas contant, the expression becomes ideal gas equation
@@ -210,19 +211,19 @@ The ideal gas equation can be rearranged to
 where $V_m$ is the molar volume.\\
 We use series expansion to approximate the behavior of real gases.
 \begin{equation*}
-    P=\frac{RT}{V_m}(1 + \frac{B'P}{V_m} + \frac{C'P^2}{V_m^2} ...)
+    P=\frac{RT}{V_m}\left(1 + \frac{B'P}{V_m} + \frac{C'P^2}{V_m^2} ...\right)
 \end{equation*}
 As pressure is proportional to temperature, $P$ in the expansion terms can be rewritten as function of temperature.
 \begin{equation*}
-    P=\frac{RT}{V_m}(1+\frac{B(T)}{V_m}+\frac{C(T)}{V_m}...)
+    P=\frac{RT}{V_m}\left(1+\frac{B(T)}{V_m}+\frac{C(T)}{V_m}...\right)
 \end{equation*}
 \subsubsection*{Van der Waals Correction}
 Van der Waals proposed two correction temrs to the original equation.
 \begin{equation*}
     \begin{aligned}
-        P&=\frac{nRT}{V-nb}-\frac{an^2}{V^2}\\
-        &=\frac{RT}{V_m-b}-\frac{a}{V_m^2}\\
-        &=\frac{RT}{V_m}(1-\frac{b}{V_m})^{-1}-\frac{a}{V_m^2}
+        P & =\frac{nRT}{V-nb}-\frac{an^2}{V^2}                               \\
+          & =\frac{RT}{V_m-b}-\frac{a}{V_m^2}                                \\
+          & =\frac{RT}{V_m}\left(1-\frac{b}{V_m}\right)^{-1}-\frac{a}{V_m^2}
     \end{aligned}
 \end{equation*}
 Using the expansion of $(1-x)^{-1}$
@@ -230,6 +231,6 @@ Using the expansion of $(1-x)^{-1}$
     (1-x)^{-1}=1+x+x^2+...
 \end{equation*}
 \begin{equation*}
-    P=\frac{RT}{V_m}(1+\frac{b-\frac{a}{RT}}{V_m}+\frac{b^2}{V_m^2}+...)
+    P=\frac{RT}{V_m}\left(1+\frac{b-\frac{a}{RT}}{V_m}+\frac{b^2}{V_m^2}+...\right)
 \end{equation*}
 \end{document}

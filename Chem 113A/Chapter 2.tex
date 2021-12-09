@@ -16,8 +16,8 @@
 The internal energy of an isolated system is conserved.
 \begin{equation*}
     \begin{aligned}
-        &\Delta U(\mathrm{total})=\Delta U(\mathrm{system})+\Delta U(\mathrm{surrounding})\\
-        &\Delta U(\mathrm{system})=-\Delta U(\mathrm{surrounding})
+         & \Delta U(\mathrm{total})=\Delta U(\mathrm{system})+\Delta U(\mathrm{surrounding}) \\
+         & \Delta U(\mathrm{system})=-\Delta U(\mathrm{surrounding})
     \end{aligned}
 \end{equation*}
 
@@ -57,25 +57,25 @@ We define a new variable enthalpy (H).
 Differentiating both sides,
 \begin{equation*}
     \begin{aligned}
-        \diff H&=\diff (U+PV)\\
-        &=\diff U+\diff (PV)\\
-        &=\diff U+P\diff V+V\diff P
+        \diff H & =\diff (U+PV)              \\
+                & =\diff U+\diff (PV)        \\
+                & =\diff U+P\diff V+V\diff P
     \end{aligned}
 \end{equation*}
 
 Plugging in $\diff U=\delta q-P\diff V$,
 \begin{equation*}
     \begin{aligned}
-        \diff H&=(\delta q-P\diff V)+P\diff V+V\diff P\\
-        &=\delta q+V\diff P
+        \diff H & =(\delta q-P\diff V)+P\diff V+V\diff P \\
+                & =\delta q+V\diff P
     \end{aligned}
 \end{equation*}
 
 Under isobaric condition, where $\diff P=0$,
 \begin{equation*}
     \begin{aligned}
-        \diff H_P&=\delta q_P=\frac{\delta q_P}{\diff T}\diff T\\
-        &=C_P\diff T
+        \diff H_P & =\delta q_P=\frac{\delta q_P}{\diff T}\diff T \\
+                  & =C_P\diff T
     \end{aligned}
 \end{equation*}
 
@@ -124,7 +124,7 @@ Then,
 
 For monatomic ideal gas,
 \begin{equation*}
-    C_V=(\frac{\partial U}{\partial T})_V=\frac{3}{2}nR
+    C_V=\left(\frac{\partial U}{\partial T}\right)_V=\frac{3}{2}nR
 \end{equation*}
 \begin{equation*}
     C_P=C_V+nR=\frac{5}{2}nR
@@ -143,16 +143,16 @@ For reversible isothermal expansion,
 Adiabatic condition implies $\delta q=0$
 \begin{equation*}
     \begin{aligned}
-        \diff U_ad&=\delta q_ad + \delta w_ad\\
-        &=-p\diff V=C_V\diff T
+        \diff U_ad & =\delta q_ad + \delta w_ad \\
+                   & =-p\diff V=C_V\diff T
     \end{aligned}
 \end{equation*}
 
 Thus,
 \begin{equation*}
     \begin{aligned}
-        C_V\diff T&=-P\diff V=-\frac{nRT}{V}\diff V\\
-        C_V\frac{\diff T}{T}&=-nR\frac{\diff V}{V}
+        C_V\diff T           & =-P\diff V=-\frac{nRT}{V}\diff V \\
+        C_V\frac{\diff T}{T} & =-nR\frac{\diff V}{V}
     \end{aligned}
 \end{equation*}
 
@@ -164,7 +164,7 @@ Considering the initial condition $V_i$ and $T_i$, the final condition $V_f$ and
     C_V\ln\frac{T_f}{T_i}=-nR\ln\frac{V_f}{V_i}=-(C_P-C_V)\ln\frac{V_f}{V_i}
 \end{equation*}
 \begin{equation*}
-    \ln\frac{T_f}{T_i}=-(\frac{C_P}{C_V}-1)\ln\frac{V_f}{V_i}
+    \ln\frac{T_f}{T_i}=-\left(\frac{C_P}{C_V}-1\right)\ln\frac{V_f}{V_i}
 \end{equation*}
 
 We define $\gamma=\frac{C_P}{C_V}=\frac{c_P}{c_V}$,
@@ -172,16 +172,16 @@ We define $\gamma=\frac{C_P}{C_V}=\frac{c_P}{c_V}$,
     \ln\frac{T_f}{T_i}=-(\gamma-1)\ln\frac{V_f}{V_i}
 \end{equation*}
 \begin{equation*}
-    \ln\frac{T_i}{T_f}=\ln(\frac{V_f}{V_i})^{-(\gamma-1)}
+    \ln\frac{T_i}{T_f}=\ln\left(\frac{V_f}{V_i}\right)^{-(\gamma-1)}
 \end{equation*}
 \begin{equation*}
-    \frac{T_f}{T_i}=(\frac{V_f}{V_i})^{-(\gamma-1)}=(\frac{V_i}{V_f})^{\gamma-1}
+    \frac{T_f}{T_i}=\left(\frac{V_f}{V_i}\right)^{-(\gamma-1)}=\left(\frac{V_i}{V_f}\right)^{\gamma-1}
 \end{equation*}
 \begin{equation*}
-    \frac{P_fV_f}{P_iV_i}=\frac{T_f}{T_i}=(\frac{V_f}{V_i})^{-(\gamma-1)}
+    \frac{P_fV_f}{P_iV_i}=\frac{T_f}{T_i}=\left(\frac{V_f}{V_i}\right)^{-(\gamma-1)}
 \end{equation*}
 \begin{equation*}
-    \boxed{\frac{P_f}{P_i}=(\frac{V_f}{V_i})^{-\gamma}=(\frac{V_i}{V_f})^\gamma}
+    \boxed{\frac{P_f}{P_i}=\left(\frac{V_f}{V_i}\right)^{-\gamma}=\left(\frac{V_i}{V_f}\right)^\gamma}
 \end{equation*}
 \subsection*{Thermochemistry}
 For a chemical reaction at standard condition,
@@ -234,26 +234,26 @@ And this yields $H_1=H_2$.
 
 We know the equation
 \begin{equation*}
-    \diff H=(\frac{\partial H}{\partial T})_P\diff T+(\frac{\partial H}{\partial P})_T\diff P
+    \diff H=\left(\frac{\partial H}{\partial T}\right)_P\diff T+\left(\frac{\partial H}{\partial P}\right)_T\diff P
 \end{equation*}
 
 And because the process is isoenthalpic, which means $\Delta H=0$
 \begin{equation*}
-    0=C_P\diff T+(\frac{\partial H}{\partial P})_T\diff P
+    0=C_P\diff T+\left(\frac{\partial H}{\partial P}\right)_T\diff P
 \end{equation*}
 
 Then, rearrange this equation
 \begin{equation*}
-    (\frac{\partial H}{\partial P})_T=-C_P(\frac{\partial T}{\partial P})_H
+    \left(\frac{\partial H}{\partial P}\right)_T=-C_P\left(\frac{\partial T}{\partial P}\right)_H
 \end{equation*}
 
 We define the Joule–Thomson coefficient $\mu$ as
 \begin{equation*}
-    \mu=(\frac{\partial T}{\partial P})_H
+    \mu=\left(\frac{\partial T}{\partial P}\right)_H
 \end{equation*}
 
 So the change of enthalpy with respect to pressure can be written as
 \begin{equation*}
-    \boxed{(\frac{\partial H}{\partial P})_T=-C_P\mu}
+    \boxed{\left(\frac{\partial H}{\partial P}\right)_T=-C_P\mu}
 \end{equation*}
 \end{document}

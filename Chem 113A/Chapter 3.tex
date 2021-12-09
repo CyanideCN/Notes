@@ -85,31 +85,31 @@ Thus,
 
 And we know that,
 \begin{equation*}
-    \diff U=(\frac{\partial U}{\partial S})_V\diff S+(\frac{\partial U}{\partial V})_S\diff V
+    \diff U=\left(\frac{\partial U}{\partial S}\right)_V\diff S+\left(\frac{\partial U}{\partial V}\right)_S\diff V
 \end{equation*}
 
 By comparing these two expressions, it's obvious that
 \begin{equation*}
-    T=(\frac{\partial U}{\partial S})_V
+    T=\left(\frac{\partial U}{\partial S}\right)_V
 \end{equation*}
 \begin{equation*}
-    P=-(\frac{\partial U}{\partial V})_S
+    P=-\left(\frac{\partial U}{\partial V}\right)_S
 \end{equation*}
 
 From a property of exact differential that
 \begin{equation*}
-    (\frac{\partial g(x, y)}{\partial y})_x=(\frac{\partial h(x, y)}{\partial y})_y
+    \left(\frac{\partial g(x, y)}{\partial y}\right)_x=\left(\frac{\partial h(x, y)}{\partial y}\right)_y
 \end{equation*}
 
 We can write similar equation
 \begin{equation*}
-    (\frac{\partial}{\partial V}(\frac{\partial U}{\partial S})_V)_S=
-    (\frac{\partial}{\partial S}(\frac{\partial U}{\partial V})_S)_V
+    \left(\frac{\partial}{\partial V}\left(\frac{\partial U}{\partial S}\right)_V\right)_S=
+    \left(\frac{\partial}{\partial S}\left(\frac{\partial U}{\partial V}\right)_S\right)_V
 \end{equation*}
 
 So,
 \begin{equation*}
-    (\frac{\partial T}{\partial V})_S=-(\frac{\partial P}{\partial S})_V
+    \left(\frac{\partial T}{\partial V}\right)_S=-\left(\frac{\partial P}{\partial S}\right)_V
 \end{equation*}
 which is one of Maxwell relations
 
@@ -118,14 +118,16 @@ We define the internal pressure $\pi_T$ equals to $(\frac{\partial U}{\partial V
 From the definition $\diff U=T\diff S-P\diff V$, we can get
 \begin{equation*}
     \begin{aligned}
-        (\frac{\partial U}{\partial V})_T&=T(\frac{\partial S}{\partial V})-P\\
-        &=(\frac{\partial U}{\partial S})_V(\frac{\partial S}{\partial V})_T+ (\frac{\partial U}{\partial V})_S
+        \left(\frac{\partial U}{\partial V}\right)_T & =T\left(\frac{\partial S}{\partial V}\right)-P \\
+                                                     & =\left(\frac{\partial U}{\partial S}\right)_V
+        \left(\frac{\partial S}{\partial V}\right)_T+
+        \left(\frac{\partial U}{\partial V}\right)_S
     \end{aligned}
 \end{equation*}
 
 Substituting Maxwell relations again,
 \begin{equation*}
-    \pi_T=T(\frac{\partial P}{\partial T})_V-P
+    \pi_T=T\left(\frac{\partial P}{\partial T}\right)_V-P
 \end{equation*}
 
 \subsection*{Gibbs Free Energy}
@@ -137,9 +139,9 @@ The Gibbs free energy is defined as
 When taking derivatives,
 \begin{equation*}
     \begin{aligned}
-        \diff G&=\diff U+P\diff V+V\diff P-T\diff S-S\diff T\\
-        &=T\diff S-P\diff V+P\diff V+V\diff P-T\diff S-S\diff T\\
-        &=V\diff P-S\diff T
+        \diff G & =\diff U+P\diff V+V\diff P-T\diff S-S\diff T           \\
+                & =T\diff S-P\diff V+P\diff V+V\diff P-T\diff S-S\diff T \\
+                & =V\diff P-S\diff T
     \end{aligned}
 \end{equation*}
 
@@ -165,23 +167,23 @@ For a spontaneous process, $\diff G$ is always less than or equal to 0 at consta
 \subsubsection*{Variation of Gibbs Energy with Temperature}
 Because
 \begin{equation*}
-    \diff G=(\frac{\partial G}{\partial T})_P\diff T+(\frac{\partial G}{\partial P})_T\diff P
+    \diff G=\left(\frac{\partial G}{\partial T}\right)_P\diff T+\left(\frac{\partial G}{\partial P}\right)_T\diff P
 \end{equation*}
 \begin{equation*}
-    V=(\frac{\partial G}{\partial P})_T
+    V=\left(\frac{\partial G}{\partial P}\right)_T
 \end{equation*}
 \begin{equation*}
-    -S=(\frac{\partial G}{\partial T})_p
+    -S=\left(\frac{\partial G}{\partial T}\right)_P
 \end{equation*}
 
 Because $S=\frac{H-G}{T}$, we can get
 \begin{equation*}
-    (\frac{\partial G}{\partial T})_p=\frac{G-H}{T}
+    \left(\frac{\partial G}{\partial T}\right)_p=\frac{G-H}{T}
 \end{equation*}
 
 After several derivation, we can get Gibbs-Helmholtz equation.
 \begin{equation*}
-    \boxed{(\frac{\partial (G/T)}{\partial T})_P=-\frac{H}{T^2}}
+    \boxed{\left(\frac{\partial (G/T)}{\partial T}\right)_P=-\frac{H}{T^2}}
 \end{equation*}
 
 \subsubsection*{Variation of Gibbs Energy with Pressure}

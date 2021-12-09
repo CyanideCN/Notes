@@ -17,13 +17,13 @@
 \subsubsection*{Volume}
 The partial molar volume is defined as
 \begin{equation*}
-    V_j=(\frac{\partial V}{\partial n_j})_{T,P,n_i\neq n_j}
+    V_j=\left(\frac{\partial V}{\partial n_j}\right)_{T,P,n_i\neq n_j}
 \end{equation*}
 
 For a two-component system,
 \begin{equation*}
-    \diff V=(\frac{\partial V}{\partial n_A})_{T,P,n_b}\diff n_A
-    +(\frac{\partial V}{\partial n_B})_{T,P,n_A}\diff n_B
+    \diff V=\left(\frac{\partial V}{\partial n_A}\right)_{T,P,n_b}\diff n_A
+    +\left(\frac{\partial V}{\partial n_B}\right)_{T,P,n_A}\diff n_B
 \end{equation*}
 \begin{equation*}
     \diff V=V_A\diff n_A+V_B\diff n_B
@@ -37,7 +37,7 @@ Thus,
 The partial molar Gibbs free energy is defined as chemical potential as discussed before.
 So,
 \begin{equation*}
-    \mu_j=(\frac{\partial G}{\partial n_j})_{T,P,n_i\neq n_j}
+    \mu_j=\left(\frac{\partial G}{\partial n_j}\right)_{T,P,n_i\neq n_j}
 \end{equation*}
 \begin{equation*}
     G=n_A\mu_A+n_B\mu_B
@@ -59,7 +59,7 @@ Because $P_A=x_AP$ where $x$ is the mole fraction of A,
     \mu_A^{mix}=\mu_A^{pure}+RT\ln x_A
 \end{equation*}
 
-And because $x_A$ ranges from 0 to 1, $\n x_A$ is never positive, so
+And because $x_A$ ranges from 0 to 1, $\ln x_A$ is never positive, so
 \begin{equation*}
     \Delta G_{mix}\leq 0
 \end{equation*}
@@ -74,7 +74,7 @@ the Gibbs energy is
 
 And the Gibbs energy for mixture is
 \begin{equation*}
-    G_2=n_A(\mu_A+RT\ln x_A)+n_B(\mu_B+RT\ln x_B)
+    G_2=n_A\left(\mu_A+RT\ln x_A\right)+n_B\left(\mu_B+RT\ln x_B\right)
 \end{equation*}
 
 So, the change of Gibbs energy of mixing is
@@ -92,12 +92,12 @@ In general,
 \subsubsection*{Mixing of Liquid}
 For solution, there is an equilibrium of liquid and corresponding gas.
 \begin{equation*}
-    \mu_A^*(l)=\mu_A\zero(g)+RT\ln\frac{P_A^*}{P\zero}
+    \mu_A^*(l)=\mu_A\zero\left(g\right)+RT\ln\frac{P_A^*}{P\zero}
 \end{equation*}
 
-At equilibrium, $\mu_A(l)=\mu_A(g)$, so
+At equilibrium, $\mu_A(l)=\mu_A\left(g\right)$, so
 \begin{equation*}
-    \mu_A\zero(g)=\mu_A^*-RT\ln\frac{P_A}{P\zero}
+    \mu_A\zero\left(g\right)=\mu_A^*-RT\ln\frac{P_A}{P\zero}
 \end{equation*}
 where $P_A^*$ is vapor pressure of pure A.
 
@@ -117,4 +117,93 @@ From the Raolt's law where $P_A=x_AP_A^*$, we can write
 However, when solution is dilute, $P_A\propto x_A$, which is known as Henry's law.
 
 \subsection*{Colligative Properties}
+
+
+\subsection*{Osmotic Pressure}
+Consider a container separated by a semipermeable membrane. The left side contains pure A
+and the right side contains both A and B. The pressure above left side is $P$ and the pressure
+above right side is $P+\Pi$
+
+At equilibrium, chemical potentials at both sides are equal.
+\begin{equation*}
+    \mu_A^*(P)=\mu_A\left(x_A,P+\Pi\right)
+\end{equation*}
+\begin{equation*}
+    \mu_A^*\left(x_A,P+\Pi\right)=\mu_A^*(P)-RT\ln x_A
+\end{equation*}
+
+At constant temperature, $\diff G_m=V_m\diff P$, so
+\begin{equation*}
+    G_{m,f}=G_{m,i}+\int_{P_i}^{P_f}V_m\diff P
+\end{equation*}
+\begin{equation*}
+    \mu_A^*\left(x_A,P+\Pi\right)=\mu_A^*(P)+\int_{P}^{P+\Pi}V_m\diff P
+\end{equation*}
+
+And this gives
+\begin{equation*}
+    \mu_A^*(P)+\int_{P}^{P+\Pi}V_m\diff P=\mu_A^*(P)-RT\ln x_A
+\end{equation*}
+\begin{equation*}
+    -RT\ln x_A=\int_{P}^{P+\Pi}V_m\diff P
+\end{equation*}
+
+When the osmotic pressure $\Pi$ is much smaller relative to $P$, this simplifies to
+\begin{equation*}
+    -RT\ln x_A=V_m\left(P+\Pi\right)-V_mP=V_m\Pi
+\end{equation*}
+
+And when $x_B$ is very small, $\ln x_A=\ln\left(1-x_B\right)\approx-x_B$, we can write the osmotic
+pressure as
+\begin{equation*}
+    \Pi=\frac{RTx_B}{V_m}=RT\frac{n_B}{nV_m}=RT\frac{n_B}{V}
+\end{equation*}
+\begin{equation*}
+    \boxed{\Pi=RTc_B}
+\end{equation*}
+\subsection*{Activity}
+\subsubsection*{Solvent Activity}
+We know that
+\begin{equation*}
+    \mu_A=\mu_A^*+RT\ln x_A
+\end{equation*}
+
+The activity of A is defined as
+\begin{equation*}
+    \mu_A=\mu_A^*+RT\ln a_A
+\end{equation*}
+
+And $a_A$ approaches $x_A$ when $x_A$ approaches to 1. We use a new coefficient to describe that
+\begin{equation*}
+    a_A=\gamma_Ax_A
+\end{equation*}
+
+$\gamma_A$ approaches 1 when $x_A$ approaches to 1.
+
+The corrected Rault's law with activity is
+\begin{equation*}
+    \mu_A=\mu_A^*+RT\ln a_A\gamma_A=\mu_A^*+RT\ln a_A+RT\ln\gamma_A
+\end{equation*}
+\subsubsection*{Solute Activity}
+For ideal situation where $x_B$ approaches to zero, Henry's law states that
+\begin{equation*}
+    P_B=K_Bx_B
+\end{equation*}
+
+The chemical potential is
+\begin{equation*}
+    \begin{aligned}
+        \mu_B & =\mu_B^*+RT\ln\frac{P_B}{P_B^*}         \\
+              & =\mu_B^*+RT\ln\frac{K_Bx_B}{P_B^*}      \\
+              & =\mu_B^*+RT\ln\frac{K_B}{P_B^*}+\ln x_B
+    \end{aligned}
+\end{equation*}
+
+The term $\mu_B^*+RT\ln\frac{K_B}{P_B^*}$ is constant and can be replaced by a
+new constant $\mu_B\zero$. The expression then comes back to ideal equation.
+
+For real solutes, we use similar approach.
+\begin{equation*}
+    \mu_B=\mu_B\zero+RT\ln a_B
+\end{equation*}
 \end{document}

@@ -19,10 +19,10 @@ For a chemical reaction, the change of Gibbs energy is
     \Delta_rG=\sum_p(\mu_p\zero+RT\ln\frac{P_p}{P\zero})-\sum_r(\mu_r\zero+RT\ln\frac{P_r}{P\zero})
 \end{equation*}
 \begin{equation*}
-    \Delta_rG=\Delta_rG\zero+RT\ln\frac{\prod_p(\frac{P_p}{P_0})^{\nu_p}}{\prod_r(\frac{P_r}{P_0})^{\nu_r}}
+    \Delta_rG=\Delta_rG\zero+RT\ln\frac{\prod_p\left(\frac{P_p}{P_0}\right)^{\nu_p}}{\prod_r\left(\frac{P_r}{P_0}\right)^{\nu_r}}
 \end{equation*}
 
-We define the reaction quotient $Q$ as $\frac{\prod_p(\frac{P_p}{P_0})^{\nu_p}}{\prod_r(\frac{P_r}{P_0})^{\nu_r}}$
+We define the reaction quotient $Q$ as $\frac{\prod_p\left(\frac{P_p}{P_0}\right)^{\nu_p}}{\prod_r\left(\frac{P_r}{P_0}\right)^{\nu_r}}$
 , so
 \begin{equation*}
     \Delta_rG=\Delta_rG\zero+RT\ln Q
@@ -30,8 +30,8 @@ We define the reaction quotient $Q$ as $\frac{\prod_p(\frac{P_p}{P_0})^{\nu_p}}{
 
 When at equilibrium, $\Delta_rG=0$, so $\Delta_rG\zero=-RT\ln Q_{eq}$.
 \begin{equation*}
-    \Delta_rG\zero=\frac{\prod_p(\frac{P_p^{eq}}{P_0})^{\nu_p}}
-    {\prod_r(\frac{P_r^{eq}}{P_0})^{\nu_r}}P\zero^{\Delta\nu}
+    \Delta_rG\zero=\frac{\prod_p\left(\frac{P_p^{eq}}{P_0}\right)^{\nu_p}}
+    {\prod_r\left(\frac{P_r^{eq}}{P_0}\right.)^{\nu_r}}(P^\circ)^{\Delta\nu}
 \end{equation*}
 
 $\Delta\nu$ is the change of stoichiometric coefficient in the reaction that
@@ -41,8 +41,8 @@ $\Delta\nu$ is the change of stoichiometric coefficient in the reaction that
 
 By convention, we define the equilibrium constant as
 \begin{equation*}
-    K_p=\frac{\prod_p(\frac{P_p^{eq}}{P_0})^{\nu_p}}
-    {\prod_r(\frac{P_r^{eq}}{P_0})^{\nu_r}}P\zero^{\Delta\nu}
+    K_p=\frac{\prod_p\left(\frac{P_p^{eq}}{P_0}\right)^{\nu_p}}
+    {\prod_r\left(\frac{P_r^{eq}}{P_0}\right)^{\nu_r}}(P^\circ)^{\Delta\nu}
 \end{equation*}
 \subsection*{Variation of Equilibrium Constant with Temperature}
 We know that
@@ -52,7 +52,7 @@ We know that
 
 Differetiating the equation gives
 \begin{equation*}
-    \frac{\partial\ln K_p}{\partial T}=-\frac{1}{R}(\frac{\Delta_rG\zero/T}{\partial T})
+    \frac{\partial\ln K_p}{\partial T}=-\frac{1}{R}\left(\frac{\Delta_rG\zero/T}{\partial T}\right)
 \end{equation*}
 
 And the Gibbs-Helmholtz equation shows that
@@ -72,9 +72,73 @@ This is called van't Hoff equation.
 
 For the change from $T\zero$ to $T$, we integrate the equation that
 \begin{equation*}
-    \ln K_p(T)-\ln K_p(T\zero)=\int_{T\zero}^{T}\frac{\Delta_rH\zero}{RT^2}}
+    \ln K_p(T)-\ln K_p(T\zero)=\int_{T\zero}^{T}\frac{\Delta_rH\zero}{RT^2}
 \end{equation*}
 \begin{equation*}
-    \boxed{\ln K_p(T)=\ln K_p(T\zero)-\frac{\Delta_rH\zero}{R}(\frac{1}{T}-\frac{1}{T\zero})}
+    \boxed{\ln K_p(T)=\ln K_p(T\zero)-\frac{\Delta_rH\zero}{R}\left(\frac{1}{T}-\frac{1}{T\zero}\right)}
+\end{equation*}
+\subsection*{Non-PV Work and Equilibrium}
+\subsubsection*{Nernst Equation}
+The work done by an electrochemical cell is given by
+\begin{equation*}
+    w_e=|e(\phi_2-\phi_1)|=|FE|
+\end{equation*}
+where $E$ is the potential difference across cells and $F$ is Faraday's constant.
+
+Because $\diff G=\Delta_rG\diff \xi$, at constant pressure and temperature,
+\begin{equation*}
+    \diff G=\diff w_e=|nFE|\diff\xi
+\end{equation*}
+
+Thus,
+\begin{equation*}
+    \Delta_rG=|nFE|
+\end{equation*}
+
+Combining the derived Gibss energy equation with reaction quotient, we get
+\begin{equation*}
+    \Delta_rG\zero+RT\ln Q=|nFE|
+\end{equation*}
+
+Because the work is done by system, the sign of work is negative,
+\begin{equation*}
+    \Delta_rG\zero+RT\ln Q=-nFE
+\end{equation*}
+\begin{equation*}
+    E_{cell}=-\frac{\Delta_rG\zero}{nF}-\frac{RT}{nF}\ln Q
+\end{equation*}
+
+And we define the standard cell potential $E\zero$ is
+\begin{equation*}
+    E_{cell}\zero=-\frac{\Delta_rG}{nF}
+\end{equation*}
+
+Then, we get the Nernst equation
+\begin{equation*}
+    \boxed{E_{cell}=E_{cell}\zero-\frac{RT}{nF}\ln Q}
+\end{equation*}
+\subsubsection*{Cells at Equilibrium}
+When cells are in equilibrium, they can not do any work, so $\Delta_rG=0$. The Nernst equation
+becomes
+\begin{equation*}
+    E_{cell}\zero=\frac{RT}{nF}\ln K
+\end{equation*}
+\subsubsection*{Thermodynamic Functions and Cell Potential}
+We can further rearrange the Nerst equation at equilibrium that
+\begin{equation*}
+    \ln K=\frac{nFE_{cell}\zero}{RT}
+\end{equation*}
+
+Because $\left(\frac{\partial G}{\partial T}_P=-S\right)$,
+\begin{equation*}
+    \left(\frac{\partial \Delta_rG}{\partial T}\right)\zero_P=-\Delta_rS\zero
+\end{equation*}
+\begin{equation*}
+    \Delta_rS\zero=-nF\left(\frac{\partial E_{cell}\zero}{\partial T}\right)
+\end{equation*}
+
+And we can further derive enthalpy.
+\begin{equation*}
+    \Delta_rH\zero=-nF(E_{cell}\zero-T\frac{\partial E_{cell}\zero}{\partial T})
 \end{equation*}
 \end{document}

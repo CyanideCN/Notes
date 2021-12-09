@@ -16,26 +16,26 @@
 \subsection*{Chemical Potential}
 For a system, $\diff G$ can be written as
 \begin{equation*}
-    \diff G=(\frac{\partial G}{\partial T})_{P,n_i}+(\frac{\partial G}{\partial P})_{T,n_i}
-    +\sum_i(\frac{\partial G}{\partial n_i})_{T,P,n_j\neq n_i}
+    \diff G=\left(\frac{\partial G}{\partial T}\right)_{P,n_i}+\left(\frac{\partial G}{\partial P}\right)_{T,n_i}
+    +\sum_i\left(\frac{\partial G}{\partial n_i}\right)_{T,P,n_j\neq n_i}
 \end{equation*}
 
 At constant pressure and temperature, it can be simplified to
 \begin{equation*}
-    \diff G=\sum_i(\frac{\partial G}{\partial n_i})_{T,P,n_j\neq n_i}
+    \diff G=\sum_i\left(\frac{\partial G}{\partial n_i}\right)_{T,P,n_j\neq n_i}
 \end{equation*}
 
 We define each component in $\diff G$ as chemical potential $\mu$ such that
 \begin{equation*}
-    \mu_i=(\frac{\partial G}{\partial n_i})_{T,P,n_j\neq n_i}
+    \mu_i=\left(\frac{\partial G}{\partial n_i}\right)_{T,P,n_j\neq n_i}
 \end{equation*}
 
 For a system containing to components $n_1$ and $n_2$,
 \begin{equation*}
     \begin{aligned}
-        \diff G&=(\frac{\partial G}{\partial n_1})_{T,P,n_2}\diff n_1+(\frac{\partial G}{\partial n_2})
-        _{T,P,n_1}\diff n_2\\
-        &=\mu_1\diff n_1+\mu_2\diff n_2
+        \diff G & =\left(\frac{\partial G}{\partial n_1}\right)_{T,P,n_2}\diff n_1+
+        \left(\frac{\partial G}{\partial n_2}\right)_{T,P,n_1}\diff n_2             \\
+                & =\mu_1\diff n_1+\mu_2\diff n_2
     \end{aligned}
 \end{equation*}
 
@@ -103,6 +103,6 @@ Plugging in $\frac{\diff x}{x}=\diff\ln x$, we get Clausius-Clapeyron equation.
 
 When integrating from $T^*$ to $T$ and $P^*$ to $P$, we get
 \begin{equation*}
-    \ln\frac{P}{P^*}=-\frac{\Delta_{vap}H}{R}(\frac{1}{T}-\frac{1}{T^*})
+    \ln\frac{P}{P^*}=-\frac{\Delta_{vap}H}{R}\left(\frac{1}{T}-\frac{1}{T^*}\right)
 \end{equation*}
 \end{document}
