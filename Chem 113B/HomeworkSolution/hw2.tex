@@ -1,0 +1,51 @@
+\item The primary change in going from translation to rotation is found in going from linear momentum
+to angular momentum. This change is significant as seen in the form of the momentum operators.
+While it is obvious  $[\hat{p_x},\hat{p_y}]=0$ since $x$ and $y$ are independent variables, the same is not true for
+$[\hat{M_x},\hat{M_y}]$.
+\begin{enumerate}
+    \item Show $[\hat{M_x},\hat{M_y}]=i\hbar\hat{M_z}$.
+    \item Rationalize the values of $[\hat{M_y},\hat{M_z}]$ and $[\hat{M_z},\hat{M_x}]$ without doing the details.
+    \item Show that $\hat{M_x},\hat{M_y},\hat{M_z}$ commute with $\hat{M^2}$, where $\hat{M^2}=\hat{M_x}^2+\hat{M_y}^2+\hat{M_z}^2$.
+    \item Given the results in part (a) and part (c), what does this say about the possibility of simultaneous
+          eigenfunctions for $\hat{M_x},\hat{M_y},\hat{M_z}$ and $\hat{M^2}$?
+\end{enumerate}
+
+\begin{solution}\
+    \begin{enumerate}
+        \item First, $[\hat{M_x},\hat{M_y}]=\hat{M_x}\hat{M_y}\psi-\hat{M_y}\hat{M_x}\psi$. Then calculate two components.
+              \begin{align*}
+                  \hat{M_x}\hat{M_y}   & =\frac{\hbar}{i}\left(y \frac{\partial}{\partial z}-z \frac{\partial}{\partial y}\right) \cdot
+                  \frac{\hbar}{i}\left(z \frac{\partial}{\partial x}-x \frac{\partial}{\partial z}\right)                                                   \\
+                                       & =-\hbar^{2}\left[\left(y \frac{\partial}{\partial x}+y z \frac{\partial^{2}}{\partial x \partial z}
+                  \right)-x y \frac{\partial^{2}}{\partial z^{2}}-z^{2} \frac{\partial^{2}}{\partial x \partial y}+x z \frac{\partial^{2}}
+                  {\partial y \partial z}\right]                                                                                                            \\
+                  \hat{M_y}\hat{M}_{x} & =\frac{\hbar}{i}\left(z\frac{\partial}{\partial x}-x\frac{\partial}{\partial z}\right) \cdot \frac{\hbar}{i}
+                  \left(y \frac{\partial}{\partial z}-z \frac{\partial}{\partial y}\right)                                                                  \\
+                                       & =-\hbar^{2}\left[y z \frac{\partial^{2}}{\partial x \partial z}-z^{2}\frac{\partial^{2}}{\partial x \partial y}
+                  -x y \frac{\partial^{2}}{\partial z^{2}}+\left(x \frac{\partial}{\partial y}+x z \frac{\partial^{2}}{\partial y \partial z}\right)\right] \\
+              \end{align*}
+              So,
+              \begin{align*}
+                  \hat{M_x}\hat{M_y}-\hat{M_y}\hat{M_x} & =-\hbar^{2}\left(\frac{y}{\partial x}-\frac{\partial}{\partial y}\right)=i \hbar\left[\frac{\hbar}{i}
+                  \left(x \frac{\partial}{\partial y}-\frac{y}{\partial x}\right)\right]                                                                        \\
+                                                        & =i\hbar\hat{M_z}
+              \end{align*}
+        \item \begin{align*}
+                  [\hat{M_y},\hat{M_z}]=i \hbar \hat{M_x} \\
+                  [\hat{M_z},\hat{M_x}]=i \hbar \hat{M_y}
+              \end{align*}
+        \item \begin{align*}
+                  [\hat{M_x},\hat{M^2}] & =\hat{M_x}\hat{M^2}-\hat{M^2}\hat{M_x}                                                                       \\
+                                        & =\hat{M_x}(\hat{M_x}^2+\hat{M_y}^2+\hat{M_z}^2)-(\hat{M_x}^2+\hat{M_y}^2+\hat{M_z}^2)\hat{M_x}               \\
+                                        & =\hat{M_x}\hat{M_x}^2+\hat{M_y}\hat{M_y}^2+\hat{M_z}\hat{M_z}^2-\hat{M_x}^2\hat{M_x}
+                  -\hat{M_y}^2\hat{M_y}-\hat{M_z}^2\hat{M_z}                                                                                           \\
+                                        & =[\hat{M_x},\hat{M_y}]\hat{M_y}-\hat{M_y}[\hat{M_x},\hat{M_y}]+[\hat{M_x},\hat{M_z}]\hat{M_z}
+                  -\hat{M_z}[\hat{M_x},\hat{M_z}]                                                                                                      \\
+                                        & =(i\hbar\hat{M_z})\hat{M_y}-\hat{M_y}(i\hbar\hat{M_z})+(i\hbar\hat{M_y})\hat{M_z}-\hat{M_z}(i\hbar\hat{M_y}) \\
+                                        & =0
+              \end{align*}
+              So, $\hat{M_x}$ and $\hat{M^2}$ commute. And similar results can be derived for $\hat{M_y}$ and $\hat{M_z}$.
+        \item The operator $\hat{M^2}$ can have simultaneous wavefunctions with each of $\hat{M_x}$, $\hat{M_y}$ and $\hat{M_z}$,
+              but they will not have simultaneous wavefunctions with each other.
+    \end{enumerate}
+\end{solution}

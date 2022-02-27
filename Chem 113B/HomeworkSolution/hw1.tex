@@ -1,0 +1,192 @@
+\item Solar energy strikes Earth's atmosphere at 343 W m$^{-2}$. About 30\% is reflected and the rest is
+absorbed. The absorbed energy re-radiates as black body radiation at 5.67 $\times$ 10$^{-5}$ (T/K)$^4$ W m$^{-2}$,
+where T is the temperature. Assuming this spectrum is at equilibrium, calculate the average black
+body temperature of the Earth.  \\
+
+\begin{solution}\ \\
+    We can get the equation
+    \begin{align*}
+        343\times(1-30\%)=5.67\times 10^{-5}
+    \end{align*}
+    Solving the equation yields $T=45.4K$
+\end{solution}
+
+\item A certain metal has a work function of 3.1 eV. The metal absorbed $4.96\times 10^3$ J of light energy at
+200 nm.
+\begin{enumerate}
+    \item How many electrons were emitted? Give your answer in absolute numbers.
+    \item What is the kinetic energy of the electrons in eV?
+    \item What is the de Broglie wavelength of these electrons in meters?
+\end{enumerate}
+
+\begin{solution}\
+    \begin{enumerate}
+        \item The energy absorbed by single electron is given by $E=hv$, so the total
+              energy will be $E=Nhv$ where $N$ is the number of electrons.
+              \begin{align*}
+                  N=\frac{E}{hv}=4.5\times10^{21}
+              \end{align*}
+        \item The kinetic energy is total energy subtracted by work function.
+              \begin{align*}
+                  E_k=hv-\Phi=3.95\times10^{16}\mathrm{eV}
+              \end{align*}
+        \item The de Broglie wavelength is
+              \begin{align*}
+                  \lambda=\frac{h}{p}
+              \end{align*}
+              The momentum is given by
+              \begin{align*}
+                  E_k=\frac{p^2}{2m_e}
+              \end{align*}
+              This yieids $\lambda=2.97$ nm
+    \end{enumerate}
+\end{solution}
+
+\item The Heisenberg uncertainty principle states: $\Delta A\Delta B\geq\hbar$
+, where A and B are complimentary variables. Show $\Delta x\Delta p\geq\hbar/2$
+for a particle in the box. The answer will be a function of n. Show it
+holds for n = 1 and larger values of n.
+\begin{tcolorbox}
+    \textbf{Particle in the box}
+    \begin{align*}
+        \psi_n=\left(\frac{2}{L}\right)\sin\left(\frac{n\pi x}{L}\right)
+    \end{align*}
+\end{tcolorbox}
+
+\begin{solution}\ \\
+    The standard deviation is given by $\Delta x=[\langle x^2\rangle-
+        \langle x\rangle^2]^{1/2}$.
+    And the expected value of $x^2$ is
+    \begin{align*}
+        \langle x^2\rangle & =\int_0^L\psi^*x^2\psi \diff x
+        =\frac{2}{L}\int_0^Lx^2\sin^2\left(\frac{n\pi x}{L}\right) \diff x       \\
+                           & =\frac{2}{L}\left[\frac{L^3(4\pi^3n^3+(3-6\pi^2n^2)
+                \sin(2\pi n)-6\pi n\cos(2\pi n))}{24\pi^3n^3}\right]
+    \end{align*}
+    Since n is integer, $\sin2\pi n=0$ and $\cos2\pi n=1$.
+    \begin{align*}
+        \left\langle x^{2}\right\rangle=\frac{L^{2}}{12 \pi^{3} n^{3}}\left(4 \pi^{3} n^{3}-6 \pi n\right)
+        =L^{2}\left(\frac{1}{3}-\frac{1}{2 \pi^{2} n^{2}}\right)
+    \end{align*}
+    Similarly, for $x$, we have
+    \begin{align*}
+        \langle x\rangle & =\int_{0}^{L} \psi^{*} x \psi \diff x                                                   \\
+                         & =\frac{2}{L} \int_{0}^{L} x \sin ^{2}\left(\frac{n \pi x}{L}\right) \diff x=\frac{L}{2}
+    \end{align*}
+    This also indicates the probability of finding the particle throughout the box is equal.
+    And for momentum,
+    \begin{align*}
+        \langle p^{2}\rangle & =\int_{0}^{L} \psi^* \hbar^{2} \frac{\partial^{2} \psi}{\partial x^{2}} \diff x        \\
+                             & =\frac{2}{L} \hbar^{2}\left(\frac{\pi^{2} n^{2}}{L^{2}}\right) \int_{0}^{L} \sin^{2}
+        \left(\frac{n \pi x}{L}\right) \diff x                                                                        \\
+                             & =\frac{2 \hbar^{2} \pi^{2} n^{2}}{L^{3}}\left[\frac{L}{4}\left(2-\frac{\sin (2 \pi n)}
+            {\pi n}\right)\right]=\frac{\hbar^{2} \pi^{2} n^{2}}{L^{2}}
+    \end{align*}
+    \begin{align*}
+        \langle p\rangle=\int_{0}^{L} \psi^{*}-i \hbar \frac{\partial}{\partial x} \psi \diff x=\frac{-2 i \hbar}{L}
+        \int_{0}^{L} \sin \left(\frac{n \pi x}{L}\right)\cos \left(\frac{n \pi x}{L}\right) \diff x=0
+    \end{align*}
+    Thus,
+    \begin{align*}
+        \Delta x \Delta p & =\left[\left\langle x^{2}\right\rangle-\langle x\rangle^{2}\right]^{1 / 2}\left[\left\langle p^{2}
+        \right\rangle-[p\rangle^{2}\right]^{1 / 2}                                                                                                      \\
+                          & =L\left[\left(\frac{1}{3}-\frac{1}{2 \pi^{2} n^{2}}\right)-\frac{1}{4}\right]^{1 / 2}\left[\frac{\hbar \pi n}{\hbar}\right]
+    \end{align*}
+    For $n=1$: $\left(\frac{1}{3}-\frac{1}{2 \pi^{2}}-\frac{1}{4}\right)^{1/2}(\pi\hbar)=0.57\hbar\geq\frac{\hbar}{2}$.
+    As $n$ increases, $\Delta x \Delta p$ gets larger, so all values of $n$ will support the Heisenberg uncertainty principle.
+\end{solution}
+
+\item Two unnormalized functions of the hydrogen atoms are:
+\begin{align*}
+    \psi_1=N_1\left(2-\frac{r}{a_0}\right)e^{-r/2a_0} \\
+    \psi_2=N_2r\sin\theta\cos\phi e^{-r/2a_0}
+\end{align*}
+where $N_1$ and $N_2$ are the normalization constants.
+\begin{enumerate}
+    \item Normalize these functions.
+    \item Show $\psi_1$ and $\psi_2$ are orthogonal.
+\end{enumerate}
+
+\begin{tcolorbox}
+    \textit{The volume element for spherical polar coordinates is $r^2\diff r\sin\theta\diff\theta\diff\phi$. And the limits are
+        $0\leq r\leq\infty$, $0\leq\theta\leq\pi$, and $0\leq\phi\leq2\pi$.}
+\end{tcolorbox}
+
+\begin{solution}\
+    \begin{enumerate}
+        \item The general equation for normalization is $\int\psi^*\psi\diff\tau=1$. And for $\psi_1$, this expands to
+              \begin{align*}
+                  N_{1}^{2}\int_{0}^{\infty}r^{2}\left(2-\frac{r}{a_{0}}\right)^{2}e^{-r/a_{0}}\diff r\int_{0}^{\pi}\sin\theta\diff
+                  \theta\int_{0}^{2\pi}\diff\phi=1
+              \end{align*}
+              After solving the integral, the equation becomes
+              \begin{align*}
+                  \frac{1}{N_1^2}=8 a_{0}^{3}\cdot 2\cdot 2 \pi
+              \end{align*}
+              So, $N_1=\frac{1}{4 \sqrt{2 \pi} a_{0}^{3 / 2}}$.
+
+              Similarly,
+              \begin{align*}
+                  N_{2}^{2}\int_{0}^{\infty}r^{3}e^{-r/a_{0}}\diff r\int_{0}^{\pi}\sin^{3}\theta\diff\theta\int_{0}^{2\pi}
+                  \cos^{2}\phi\diff\phi=1
+              \end{align*}
+              And $N_2=\frac{1}{\sqrt{8\pi} a_{0}^{2}}$.
+        \item If $\psi_1$ and $\psi_2$ are orthogonal,$\int\psi_1^*\psi_2\diff\tau=0$. In this case, it equals
+              \begin{align*}
+                  \left(\frac{1}{4\sqrt{2\pi}a_{0}^{3/2}}\right)\left(\frac{1}{\sqrt{8\pi}a_{0}^{2}}\right)\int_{0}^{\infty}
+                  r^{2}\left(2-\frac{r}{a_{0}}\right)e^{-r/a_{0}}\diff r\int_{0}^{\pi}\sin^{2}\theta\diff\theta\int_{0}^{2\pi}\cos\phi\diff\phi
+              \end{align*}
+              Because $\int_{0}^{2\pi}\cos\phi\diff\phi=0$, the whole thing becomes zero, so the two wavefunctions are orthogonal.
+    \end{enumerate}
+\end{solution}
+
+\item \begin{enumerate}
+    \item Evaluate the commutators $[\hat{H},\hat{p_x}]$ and $[\hat{H},\hat{x}]$ for the cases
+          \begin{enumerate}
+              \item $V(x)=\text{constant}$
+              \item $V(x)=f(x)$
+          \end{enumerate}
+    \item For the free particle, $V(x)=\text{constant}$. What do the results in (a) part i. tell us about $\hat{H}$ and $\hat{p_x}$?
+          Is this general result found in our treatment of the free particle? Discuss and justify your
+          answer.
+    \item For the particle in a box, $V(x)=f(x)$. In this case, what do the results in a. part ii. tell us about
+          $\hat{H}$ and $\hat{p_x}$? Is this general result found in our treatment of the particle in the box? Discuss and
+          justify your answer.
+\end{enumerate}
+
+\begin{solution}\
+    \begin{enumerate}
+        \item \begin{enumerate}
+                  \item \begin{align*}
+                            [\hat{H},\hat{p_x}] & =\hat{H}\hat{p_x}\psi-\hat{p_x}\hat{H}\psi                                       \\
+                                                & =\hat{KE}\hat{p_x}\psi+V(x)\hat{p_x}\psi-\hat{p_x}\hat{KE}\psi-\hat{p_x}V(x)\psi \\
+                                                & =0
+                        \end{align*}
+                        \begin{align*}
+                            [\hat{H},\hat{x}] & =\hat{H}\hat{x}\psi-\hat{x}\hat{H}\psi                            \\
+                                              & =\hat{KE}x\psi+V(x)x\psi-x\hat{KE}\psi-xV(x)\psi                  \\
+                                              & =-\frac{\hbar^2}{2m}\pd{\psi}{x}-\frac{\hbar^2}{2m}x\pdd{\psi}{x}
+                            +\frac{x\hbar^2}{2m}\pdd{\psi}{x}                                                     \\
+                                              & =-\frac{\hbar^2}{2m}\pd{}{x}
+                        \end{align*}
+                  \item \begin{align*}
+                            [\hat{H},\hat{p_x}] & =\hat{KE}\hat{p_x}\psi+V(x)\hat{p_x}\psi-\hat{p_x}\hat{KE}\psi-
+                            (\hat{p_x}V(x)\psi+V(x)\hat{p_x}\psi)                                                 \\
+                                                & =i\hbar\pd{V(x)}{x}
+                        \end{align*}
+                        \begin{align*}
+                            [\hat{H},\hat{x}] & =\hat{KE}x\psi+V(x)x\psi-x\hat{KE}\psi-xV(x)\psi                     \\
+                                              & =(-\frac{\hbar^2}{2m}\pd{\psi}{x}-\frac{\hbar^2}{2m}x\pdd{\psi}{x})+
+                            \frac{x\hbar^2}{2m}\pdd{\psi}{x}                                                         \\
+                                              & =-\frac{\hbar^2}{2m}\pd{}{x}
+                        \end{align*}
+              \end{enumerate}
+        \item For the free particle, $\hat{H}$ and $\hat{p_x}$ commute ($V(x)$ is a constant). This makes sense since
+              the kinetic energy portion of the Hamiltonian is just $\frac{p^2}{2m}$. If we know $p$ exactly, of course we'd
+              also know $p^2$ exactly.
+        \item For the particle in a box, $\hat{H}$ and $\hat{p_x}$ do not commute, because the potential term depends
+              on position. As per the Heisenberg uncertainty principle, position and momentum cannot be simultaneously
+              known (they do not commute). Since the Hamiltonian now contains a position-dependent term, it can not longer
+              commute with the momentum.
+    \end{enumerate}
+\end{solution}
