@@ -1,0 +1,274 @@
+\documentclass[letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{indentfirst}
+
+\newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\pdd}[2]{\frac{\partial^2 #1}{\partial #2^2}}
+\newcommand{\diff}{\mathrm{d}}
+
+\makeatletter
+\begin{document}
+\newpage
+\section*{Chapter 7}
+\subsection*{Vibrational Motion}
+\subsubsection*{Harmonic Oscillator}
+For a classical harmonic oscillator, the total energy is the sum of kinetic energy
+and potential energy. Similarly, we can write the relationship for quantum harmonic oscillator.
+\begin{equation*}
+    \hat{H}=\hat{KE}+\hat{V}=\frac{\hat{p}^2}{2\mu}+V(x)
+\end{equation*}
+
+And this equals to
+\begin{equation*}
+    \hat{H}=\frac{\hbar^2}{2\mu}\pdd{}{x}+\frac{1}{2}kx^2
+\end{equation*}
+
+We also know the following relationships
+\begin{equation*}
+    y=\frac{x}{\alpha}
+\end{equation*}
+\begin{equation*}
+    \alpha=\left(\frac{\hbar^2}{\mu k}\right)^{\frac{1}{4}}
+\end{equation*}
+
+Plugging them back to the eigenvalue equation, we can get
+\begin{equation*}
+    \pdd{}{y}\psi(y)+\left(\frac{2\mu E}{\hbar^2}\alpha^2-y^2\right)\psi(y)=0
+\end{equation*}
+
+As y approaches to infinity, its wave function approaches to 0, so
+\begin{equation*}
+    y^2>>\frac{2\mu E}{\hbar^2}\alpha^2
+\end{equation*}
+
+So the relationship can be simplified as
+\begin{equation*}
+    \pdd{}{y}\psi(y)=y^2\psi(y)
+\end{equation*}
+
+It is assumed that the wavefunction is separable, and to account for the behavior near infinity,
+a gaussian term is applied.
+\begin{equation*}
+    \psi(y)=\phi(y)e^{-\frac{y^2}{2}}
+\end{equation*}
+
+This yields
+\begin{equation*}
+    \pdd{}{y}\phi(y)-2y\pd{}{y}\phi(y)+\left(\frac{2\mu E}{\hbar^2}\alpha^2-1\right)\phi(y)=0
+\end{equation*}
+
+Hermite solved this equation and shows the solutions can be written as
+\begin{equation*}
+    \phi(y)=N_vH_v(y)e^{-y^2/2}
+\end{equation*}
+where $N_v$ is the normalization constant and $H_v$ is Hermite polynomial.
+\begin{equation*}
+    N_v=\left(\frac{1}{\alpha\pi^{1/2}2^vv!}\right)^{1/2}
+\end{equation*}
+\begin{equation*}
+    H_v(y)=(-1)^ve^{y^2}\frac{\partial^v}{\partial y^v}e^{-y^2}
+\end{equation*}
+
+Thus,
+\begin{equation*}
+    E_v=(v+\frac{1}{2})\hbar\left(\frac{k}{\mu}\right)^{\frac{1}{2}}=(v+\frac{1}{2})\hbar\nu
+\end{equation*}
+
+There are two recursion relationships for Hermite polynomial.
+\begin{equation*}
+    yH_v(y)=\frac{1}{2}H_{v+1}(y)+vH_{v-1}(y)
+\end{equation*}
+\begin{equation*}
+    \pd{}{y}H_v=2vH_{v-1}(y)
+\end{equation*}
+
+From these relationships, we can easily derive some wavefunctions. For ground state wavefunction is
+\begin{equation*}
+    \psi_0(y)=\left(\frac{1}{\alpha\pi^{1/2}}\right)e^{-\frac{y^2}{2}}
+\end{equation*}
+
+And the first excited state is
+\begin{equation*}
+    \psi_1(y)=\left(\frac{1}{2\alpha\pi^{1/2}}\right)e^{-\frac{y^2}{2}}
+\end{equation*}
+\subsection*{Rotational Motion}
+For a diatomic molecule which has coordinates $x_1y_1z_1$ and $x_2y_2z_2$, the total energy is
+\begin{equation*}
+    \hat{H}_{tot}=-\frac{\hbar^2}{2m_1}\nabla_1^2-\frac{\hbar^2}{2m_2}\nabla_2^2+V(x_1,\dots,z_2)
+\end{equation*}
+
+When we treat the two particle as one system and neglect electromagnetic part, we can get
+\begin{equation*}
+    \hat{H}_{vr}=-\frac{\hbar^2}{2\mu}\nabla^2+V(x,y,z)
+\end{equation*}
+
+It's easier to do the operation on a spherical coordinates, so we need to transform coordinates from
+$xyz$ to $r\theta\phi$.
+
+We can easily get
+\begin{equation*}
+    \begin{aligned}
+         & x=r\sin\theta\cos\phi \\
+         & y=r\sin\theta\sin\phi \\
+         & z=r\cos\theta
+    \end{aligned}
+\end{equation*}
+
+Then use chain rule to derive differentials.
+\begin{equation*}
+    \begin{aligned}
+        \pd{}{x} & =\pd{r}{x}\pd{}{r}+\pd{\theta}{x}\pd{}{\theta}+\pd{\phi}{x}\pd{}{\phi}    \\
+                 & =(\sin\theta\cos\phi)\pd{}{r}+(\frac{\cos\phi\cos\theta}{r})\pd{}{\theta}
+        +\frac{\sin\phi}{r\sin\theta}\pd{}{\phi}
+    \end{aligned}
+\end{equation*}
+
+Repeating this process for other differentials, we can get
+\begin{equation*}
+    \nabla^2=\frac{1}{r^2}\pd{}{r}(r^2\pd{}{r})+\frac{1}{r^2\sin\theta}\pd{}{\theta}(\sin\theta\pd{}{\theta})
+    +\frac{1}{r^2\sin^2\theta}\pdd{}{\phi}
+\end{equation*}
+
+After that, we further separate rotation and vibration. We also fix $r$ that $r=r_0$.
+\begin{equation*}
+    \hat{H}_{vr}(r,\theta,\phi)=\hat{H}_v(r)+\hat{H}_r(\theta,\phi)
+\end{equation*}
+
+So, the first term of laplacian disappears.
+\begin{equation*}
+    \nabla_r^2=\frac{1}{r_0^2}\left(\frac{1}{\sin\theta}\pd{}{\theta}(\sin\theta\pd{}{\theta})
+    +\frac{1}{\sin^2\theta}\pdd{}{\phi}\right)
+\end{equation*}
+
+We define the moment of inertia $I=\mu r_0^2$. And then the Hamiltonian of rotational motion
+can be written as
+\begin{equation*}
+    \hat{H}_r(\theta,\phi)=-\frac{\hbar^2}{2I}r_0^2\nabla_r^2
+\end{equation*}
+\subsection*{Solve the Schrödinger equation of Hydrogen atom}
+The original Schrödinger equation is
+\begin{equation*}
+    \hat{H}\psi=-\frac{\hbar^2}{2m}\nabla^2\psi+V(r)\psi=E\psi
+\end{equation*}
+
+For the case of Hydrogen atom, we use the laplacian in spherical coordinates derivated
+above, and it becomes
+\begin{equation*}
+    -\frac{\hbar^2}{2m}\left[\frac{1}{r^2}\pd{}{r}\left(r^2\pdd{}{r}\right)+
+        \frac{1}{r^2\sin\theta}\pd{}{\theta}\left(\sin\theta\pd{}{\theta}\right)+
+        \frac{1}{r^2\sin^2\theta}\pdd{}{\phi}\right]\psi+V(r)\psi=E\psi
+\end{equation*}
+
+To solve it, we need to separate variables. And we assume that
+\begin{equation*}
+    \psi(r\theta\phi)=R(r)Y(\theta\phi)
+\end{equation*}
+
+Plugging this back to the equation above yields
+\begin{equation*}
+    \frac{1}{r^2R}\pd{}{r}\left(r^2\pd{R}{r}\right)-\frac{2mr^2}{\hbar^2}(V-E)=
+    -\left[\frac{1}{Y\sin\theta}\pd{}{\theta}\left(\sin\theta\pd{Y}{\theta}\right)+
+        \frac{1}{Y\sin^2\theta}\pdd{Y}{\phi}\right]
+\end{equation*}
+
+We assume that both side equals to constant term $l(l+1)$, so
+\begin{equation*}
+    \boxed{\frac{1}{r^2R}\pd{}{r}\left(r^2\pd{R}{r}\right)-\frac{2mr^2}{\hbar^2}(V-E)=l(l+1)}
+\end{equation*}
+\begin{equation*}
+    -\left[\frac{1}{Y\sin\theta}\pd{}{\theta}\left(\sin\theta\pd{Y}{\theta}\right)+
+        \frac{1}{Y\sin^2\theta}\pdd{Y}{\phi}\right]=l(l+1)
+\end{equation*}
+
+For the right hand side, we further separate $\theta$ and $\phi$ by defining
+\begin{equation*}
+    Y(\theta\phi)=\Theta(\theta)\Phi(\phi)
+\end{equation*}
+
+Thus,
+\begin{equation*}
+    \frac{1}{\Theta}\sin\theta\pd{}{\theta}\left(\sin\theta\pd{\Theta}{\theta}\right)+
+    \frac{1}{\Phi}\pdd{\Phi}{\phi}=-l(l+1)\sin^2\theta
+\end{equation*}
+\begin{equation*}
+    \frac{1}{\Theta}\sin\theta\pd{}{\theta}\left(\sin\theta\pd{\Theta}{\theta}\right)+
+    l(l+1)\sin^2\theta=-\frac{1}{\Phi}\pdd{\Phi}{\phi}
+\end{equation*}
+
+Assuming both side equals $m^2$, we get
+\begin{equation*}
+    \boxed{\frac{1}{\Theta}\sin\theta\pd{}{\theta}\left(\sin\theta\pd{\Theta}{\theta}\right)+
+        l(l+1)\sin^2\theta=m^2}
+\end{equation*}
+\begin{equation*}
+    \boxed{-\frac{1}{\Phi}\pdd{\Phi}{\phi}=m^2}
+\end{equation*}
+
+For now, the three variables are successfully separated.
+
+\subsubsection*{Solve $\phi$ equation}
+By observation, the general solution to this equation is
+\begin{equation*}
+    \Phi=Ae^{\pm im\phi}
+\end{equation*}
+
+Then, find the normalization constant $A$.
+\begin{equation*}
+    A^2\int_{0}^{2\pi}e^{\mp im\phi}e^{\pm im\phi}\diff\phi=1
+\end{equation*}
+\begin{equation*}
+    A^2\int_{0}^{2\pi}\diff\phi=1
+\end{equation*}
+
+So, $A=\sqrt{1/2\pi}$, and we get the final result.
+\begin{equation*}
+    \boxed{\Phi=(\frac{1}{2\pi})^{1/2}e^{\pm im\phi}}
+\end{equation*}
+
+Because this equation has physical meaning that the angular component should be the same when
+rotating 360 degrees, which means
+\begin{equation*}
+    \psi(0)=\psi(2\pi)
+\end{equation*}
+\begin{equation*}
+    \psi(\phi)=\psi(\phi+2\pi)
+\end{equation*}
+
+So,
+\begin{equation*}
+    e^{i|m|\phi}=e^{i|m|(\phi+2\pi)}
+\end{equation*}
+\begin{equation*}
+    e^{i|m|2\pi}=1=\cos|m|2\pi+\sin|m|2\pi
+\end{equation*}
+
+To ensure the sum is 1, $m$ can only be integers, which means it is quantized.
+\subsubsection*{Solve $\theta$ equation}
+\begin{equation*}
+    \frac{1}{\sin\theta}\left(\sin\theta\pd{\Theta}{\theta}\right)+l(l+1)\Theta=
+    m^2\frac{\Theta}{\sin^2\theta}
+\end{equation*}
+
+Let $\cos\theta$ equals to $x$ and $\Theta$ equals to $y$,
+\begin{equation*}
+    (1-x^2)\pdd{y}{x}-2x\pd{y}{x}+\left[l(l+1)-\frac{m^2}{1-x^2}\right]y=0
+\end{equation*}
+
+This is known as Legendre's differential equation.
+
+The generalized solution to Legendre's differential equation is
+\begin{equation*}
+    \Theta=N_{lm}P_{l|m|}
+\end{equation*}
+where
+\begin{equation*}
+    N_{lm}=\left[\frac{(2l+1)(l-|m|)!}{2(l+|m|)!}\right]^{\frac{1}{2}}
+\end{equation*}
+\begin{equation*}
+    P_{lm}=\frac{1}{2^ll!}(1-x^2)^{\frac{|m|}{2}}\frac{\diff^{l+|m|}}{dx^{l+|m|}}(x^2-1)^l
+\end{equation*}
+\subsubsection*{Solve $r$ equation}
+\end{document}

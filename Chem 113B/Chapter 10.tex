@@ -1,0 +1,75 @@
+\documentclass[letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{indentfirst}
+\usepackage{multirow}
+
+\newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\pdd}[2]{\frac{\partial^2 #1}{\partial #2^2}}
+\newcommand{\diff}{\mathrm{d}}
+
+\makeatletter
+\begin{document}
+\newpage
+\section*{Chapter 10 - Molecular Symmetry}
+\subsection*{Group theory}
+Common elements in group theory.
+\begin{table}[!htb]
+    \begin{align*}
+        \begin{tabular}{|c|c|c|}
+            \hline
+            \textbf{Element}                     & \textbf{Symbol}  & \textbf{Function}                                \\
+            \hline
+            Identity                             & $\hat{E}$        & No change                                        \\
+            \hline
+            Rotation                             & $\hat{C_n}$      & Rotation by $2\pi / n$                           \\
+            \hline
+            \multirow{3}{*}{Reflection in plane} & $\hat{\sigma_v}$ & Principal axis                                   \\
+            \cline{2-3}
+                                                 & $\hat{\sigma_n}$ & Perpendicular to principal axis                  \\
+            \cline{2-3}
+                                                 & $\hat{\sigma_d}$ & Bisects principal axis                           \\
+            \hline
+            Inversion                            & $\hat{i}$        & Inversion at center of symmetry                  \\
+            \hline
+            Improper rotation                    & $\hat{S_n}$      & Rotation of $2\pi/n$ follows by $\hat{\sigma_n}$ \\
+            \hline
+        \end{tabular}
+    \end{align*}
+\end{table}
+
+\subsubsection*{Rules}
+\begin{enumerate}
+    \item Associative law: $(\hat{A}\hat{B})\hat{C}=\hat{A}(\hat{B}\hat{C})$.
+    \item All groups contain $\hat{E}$.
+    \item $\hat{A}^{-1}\hat{A}=\hat{E}$ for all operations.
+    \item Groups are composed of class of equivalent elements.
+    \item Groups have irreducible representations (IR) that form the basic set of the group.
+          \begin{enumerate}
+              \item Number of IRs is the number of elements in the group.
+              \item Character table is the table of IRs.
+              \item Reducible representations are composed of linear combinations of IRs.
+              \item Individual symmetry characters of IRs are obtained from  the traces of the matrix
+                    of the symmetry operator.
+              \item All member of the same class have the same characters.
+          \end{enumerate}
+\end{enumerate}
+
+\subsubsection*{Character table}
+Tables showing all the characters of the operations of a group are called character tables . The columns of a character table are
+labelled with the symmetry operations of the group. Although the notation $\Gamma$ is used to label general irreducible representations,
+in chemical applications and for displaying character tables it is more common to distinguish different irreducible representations by the use of the labels A, B, E, and T to denote
+the symmetry species of each representation:
+\begin{itemize}
+    \item A: one-dimensional representation, character +1 under the principal rotation.
+    \item B: one-dimensional representation, character -1 under the principal rotation.
+    \item E: two-dimensional irreducible representation.
+    \item T: three-dimensional irreducible representation.
+\end{itemize}
+Subscripts are used to distinguish the irreducible representations if there is more than one of the same type.
+
+\subsubsection*{$C_{3V}$ group}
+The planar triangle belongs to the $C_{3V}$ group.
+\end{document}

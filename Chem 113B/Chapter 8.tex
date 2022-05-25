@@ -1,0 +1,47 @@
+\documentclass[letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{indentfirst}
+
+\newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\pdd}[2]{\frac{\partial^2 #1}{\partial #2^2}}
+\newcommand{\diff}{\mathrm{d}}
+
+\makeatletter
+\begin{document}
+\newpage
+\section*{Chapter 8}
+\subsection*{Hydrogen Atom}
+The $r$ equation originated from Schrödinger equation of Hydrogen atom is
+\begin{equation*}
+    \left[-\frac{1}{2m_er^2}\hat{D}(r)-\frac{1}{4\pi\epsilon_0}\frac{e^2}{r}+
+        \frac{\hbar^2}{2m_er^2}l(l+1)\right]R(r)=ER(r)
+\end{equation*}
+where $-\frac{1}{2m_er^2}\hat{D}(r)$ is kinetic energy term and the rest is effective
+potential energy term.
+
+And the solution is given by
+\begin{equation*}
+    R(\rho)=N_{nl}\rho^lL^{2l+1}_{n_l}(\rho)e^{-\frac{\rho}{2}}
+\end{equation*}
+\begin{equation*}
+    N_{nl}=-\left[\left(\frac{2}{na_0}\right)^3\frac{(n-l-1)!}{2n[(n+l)!]^3}\right]
+\end{equation*}
+\begin{equation*}
+    L^{2l+1}_{n_l}=(-1)^{n-l+1}\frac{\diff ^{2l+1}}{\diff\rho^{2l+1}}\left(
+    e^\rho\frac{\diff^{n+l}}{\diff\rho^{n+l}}e^{-\rho}
+    \right)
+\end{equation*}
+\subsubsection*{Radial solutions}
+\begin{equation*}
+    \begin{aligned}
+        R_{10} & =2\left(\frac{1}{a_0}\right)^{\frac{3}{2}}e^{-\frac{r}{2a_0}}                    \\
+        R_{20} & =\left(\frac{1}{8}\right)^{\frac{1}{2}}\left(\frac{1}{a_0}\right)^{\frac{3}{2}}
+        \left(2-\frac{r}{a_0}\right)e^{-\frac{r}{2a_0}}                                           \\
+        R_{21} & =\left(\frac{1}{24}\right)^{\frac{1}{2}}\left(\frac{1}{a_0}\right)^{\frac{3}{2}}
+        \frac{r}{a_0}e^{-\frac{r}{2a_0}}
+    \end{aligned}
+\end{equation*}
+\end{document}
