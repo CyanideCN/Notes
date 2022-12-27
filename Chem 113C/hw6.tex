@@ -1,0 +1,169 @@
+\item Consider an $\ce{O_2}$ molecule where $\sigma(\ce{O_2})$ = 0.410 nm$^2$.
+Do the following calculations at both 1 millibar and 1 bar pressure.
+\begin{enumerate}
+    \item Calculate the collision frequency (i.e. the number of collisions per second) at 25 °C.
+    \item Calculate on average how far a single $\ce{O_2}$ molecule can travel before having a collision.
+    \item Calculate the probability of traveling $10^{-5}$ mm and 1 mm without having a collision.
+    \item At what pressure (in bar) will the average distance traveled before a collision be $10^{-4}$ mm and
+          1 mm?
+\end{enumerate}
+
+\begin{solution}\
+    \begin{enumerate}
+        \item The collision frequency is
+              \begin{equation*}
+                  \begin{aligned}
+                      z & =\sqrt{2}\sigma(\ce{O_2})\left(\frac{8kT}{\pi m_{\ce{O2}}}\right)^{1/2}n_{\ce{O2}}  \\
+                        & =\sqrt{2}d_{\ce{O_2O_2}}^2\left(\frac{8kT}{\pi m_{\ce{O2}}}\right)^{1/2}n_{\ce{O2}}
+                  \end{aligned}
+              \end{equation*}
+              At 1 mbar,
+              \begin{equation*}
+                  \frac{n}{V}=\frac{p}{RT}=4.04\times10^{-5}\text{mol/L}=2.43\times10^{19}\text{ molecule/L}
+              \end{equation*}
+              At 1 bar,
+              \begin{equation*}
+                  \frac{n}{V}=2.43\times10^{22}\text{ molecule/L}
+              \end{equation*}
+              \begin{equation*}
+                  m_{\ce{O_2}}=32\text{ amu}=5.31\times10^{-26}\text{ kg}
+              \end{equation*}
+              So, $z=6.26\times10^3$ collisions/s/L at 1 mbar, and $z=6.26\times10^6$ collisions/s/L at 1 bar.
+        \item \begin{equation*}
+                  \lambda =\frac{1}{\sqrt{2}\sigma_{\ce{O_2}}n_{\ce{O_2}}}
+              \end{equation*}
+              At 1 mbar, $\lambda=0.071$ m. At 1 bar, $\lambda=7.1\times10^{-5}$ m.
+        \item The probability of traveling without collision is given by
+              \begin{equation*}
+                  P=e^{-x/\lambda}
+              \end{equation*}
+        \item TBA.
+    \end{enumerate}
+\end{solution}
+
+\item Consider dimethyl ether at 300 K which has an angle averaged radius of 0.25 nm.
+\begin{enumerate}
+    \item Calculate its collision frequency at 1 bar and 1 Pa.
+    \item Calculate its decomposition rate constant for $E^*=0$ and $E^*=10$ kcal/mol at both pressures.
+    \item Calculate the half life of dimethyl ether for the conditions given in part a) and b) above.
+\end{enumerate}
+
+\begin{solution}\
+    \begin{enumerate}
+        \item \begin{equation*}
+                  N=\frac{p}{KT}=5.83\times10^{40}\text{ molecule/m}^3\text{at 1 bar, }5.83\times10^{30}
+                  \text{ molecule/m}^3\text{ at 1 Pa}
+              \end{equation*}
+              \begin{equation*}
+                  m=46.07\text{ amu}=7.65\times10^{-26}\text{ kg}
+              \end{equation*}
+              \begin{equation*}
+                  d^2=(0.25\text{nm}\times2)^2=2.5\times10^{-19}\text{ m}^2
+              \end{equation*}
+              Because the collision is between identical molecules,
+              \begin{equation*}
+                  z=\pi d^2\left(\frac{4kT}{\pi m}\right)^{1/2}N^2
+              \end{equation*}
+              At 1 bar, $z=1.202\times10^{25}$ coll/s/m$^3$, at 1 Pa, $z=1.202\times10^{15}$ coll/s/m$^3$.
+        \item \begin{equation*}
+                  k_{coll}=\pi d^2\left(\frac{4kT}{\pi m}\right)^{1/2}e^{-\sme^*/kT}
+              \end{equation*}
+              \begin{tcolorbox}
+                  For non-identical collisions, the rate constant is
+                  \begin{equation*}
+                      k_{coll}=\pi d^2\left(\frac{8kT}{\pi m}\right)^{1/2}e^{-\sme^*/kT}
+                  \end{equation*}
+              \end{tcolorbox}
+        \item \begin{equation*}
+                  t_{1/2}=\frac{\ln2}{k}
+              \end{equation*}
+    \end{enumerate}
+\end{solution}
+
+\item The hydrogen molecule has two forms: Ortho- (proton spins unpaired) and Para- (proton spins
+paired). These forms are stable under most conditions. However, under select conditions the
+following reaction can occur:
+\begin{equation*}
+    \ce{para-H_2 ->[k] ortho-H_2}
+\end{equation*}
+with the observed rate law
+\begin{equation*}
+    \dd{[\text{ortho}]}{t}=k[\text{para}]^{3/2}
+\end{equation*}
+\begin{enumerate}
+    \item Show the following mechanism is consistent with the rate law and obtain k in terms of the rate
+          constant for the individual step
+          TBA.
+\end{enumerate}
+
+\item Two diethyl ether molecules react through self collision
+\begin{equation*}
+    \ce{(C_2H_5)_2O +(C_2H_5)_2O ->[k] products}
+\end{equation*}
+\begin{enumerate}
+    \item Assume the $\ce{(C_2H_5)_2O}$ molecules are spherical with a radius of 0.25 nm. Determine the collision
+          theory rate constant at 700 K.
+    \item Now assume every collision resulted in reaction of $\ce{(C_2H_5)_2O}$. What would be the half life at:
+          \begin{enumerate}
+              \item 1 bar
+              \item 0.15 Pa
+          \end{enumerate}
+\end{enumerate}
+
+\begin{solution}\
+    \begin{enumerate}
+        \item \begin{equation*}
+                  \mu=\frac{74.12}{2}\text{ g/mol}=6.154\times10^{-26}\text{ kg}
+              \end{equation*}
+              \begin{equation*}
+                  d_{AB}=0.25\times2=0.5\text{ nm}=5\times10^{-10}\text{ m}
+              \end{equation*}
+              \begin{equation*}
+                  k_{coll}=\left(\frac{8\pi kT}{\mu}\right)^{1/2}d^2=5.23\times10^{-10}\text{ cm}^3\text{s}^{-1}
+                  \text{molecule}^{-1}
+              \end{equation*}
+        \item TBA.
+    \end{enumerate}
+\end{solution}
+
+\item Two gas phase reactions are given along with their Arrhenius parameters:
+\begin{equation*}
+    \ce{CH_3NC -> CH_3CN}
+\end{equation*}
+($A=2.5\times10^{16}$ s$^{-1}$, $E_a=272$ kJ/mol)
+\begin{equation*}
+    \ce{OH +H_2 -> H_2O + H}
+\end{equation*}
+($A=8.0\times10^{13}$ L/mol/s, $E_a=42$ kJ/mol)\\\\
+Determine $\Delta H^{\circ\ddagger}$ and $\Delta S^{\circ\ddagger}$ for both reactions at 300 K.
+
+\begin{solution}\
+    \begin{enumerate}
+        \item This reaction is unimolecular reaction, so
+              \begin{equation*}
+                  E_a=\Delta H^{\circ\ddagger}+RT
+              \end{equation*}
+              \begin{equation*}
+                  \Delta H^{\circ\ddagger}=E_a-RT=269.5\text{ kJ/mol}.
+              \end{equation*}
+              \begin{equation*}
+                  A=\frac{kTe}{h}e^{\Delta S^{\circ\ddagger}/R}
+              \end{equation*}
+              \begin{equation*}
+                  \Delta S^{\circ\ddagger}=R\ln\frac{Ah}{kTe}=60.6\text{ J/mol/K}
+              \end{equation*}
+        \item This reaction is bimolecular reaction, so
+              \begin{equation*}
+                  E_a=\Delta H^{\circ\ddagger}+2RT
+              \end{equation*}
+              \begin{equation*}
+                  \Delta H^{\circ\ddagger}=E_a-2RT=37\text{ kJ/mol}.
+              \end{equation*}
+              \begin{equation*}
+                  A=\frac{(kTe)^2}{p^\circ h}e^{\Delta S^{\circ\ddagger}/R}
+              \end{equation*}
+              \begin{equation*}
+                  \Delta S^{\circ\ddagger}=R\ln\frac{Ah}{(kTe)^2}=490\text{ J/mol/K}
+              \end{equation*}
+    \end{enumerate}
+\end{solution}

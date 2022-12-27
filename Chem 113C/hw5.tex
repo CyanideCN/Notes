@@ -1,0 +1,125 @@
+\item The reaction of nitric oxide with molecular hydrogen results in production of
+molecular nitrogen and water:
+\begin{equation*}
+    \ce{2NO +2H_2 -> N_2 +2H_2O}
+\end{equation*}
+The experimental rate law for this reaction is first order in $\ce{H_2}$ and second order in
+NO.
+\begin{enumerate}
+    \item Is the reaction as written consistent with the order dependence observed
+          experimentally? Why or why not?
+    \item One possible mechanism is
+          \begin{equation*}
+              \ce{H_2 +2NO ->[k_1] N_2O +H_2O}
+          \end{equation*}
+          \begin{equation*}
+              \ce{H_2 +N_2O ->[k_2] N_2 +H_2O}
+          \end{equation*}
+          Is this mechanism consistent with the rate law? Why or why not?
+    \item A second possible mechanism is
+          \begin{equation*}
+              \ce{2NO <=>[k_1][k_{-1}] N_2O_2}
+          \end{equation*}
+          \begin{equation*}
+              \ce{H_2 + N_2O_2 ->[k_2] N_2O +H_2O}
+          \end{equation*}
+          \begin{equation*}
+              \ce{H_2 +N_2O ->[k_3] N_2 +H_2O}
+          \end{equation*}
+          Show that this mechanism is consistent with the observed rate law. What
+          conditions make this true?
+\end{enumerate}
+
+\begin{solution}\
+    \begin{enumerate}
+        \item The order dependence is inconsistent because the order is not the same as the coefficient.
+        \item \begin{equation*}
+                  \dd{[\ce{N_2O}]}{t}=0=k_1[\ce{H_2}][\ce{NO}]^2-k_2[\ce{H_2}][\ce{N_2O}]
+              \end{equation*}
+              So,
+              \begin{equation*}
+                  [\ce{N_2O}]=\frac{k_1}{k_2}[\ce{NO}]^2
+              \end{equation*}
+              The rate for second step $r_2$ is
+              \begin{equation*}
+                  r_2=k_1k_2[\ce{H_2}][\ce{NO}]^2
+              \end{equation*}
+              The proposed mechanism is consistent with the experimental rate observed.
+        \item There are two intermediates: $\ce{N_2O_2}$ and $\ce{N_2O}$.
+              \begin{equation*}
+                  \dd{[\ce{N_2O_2}]}{t}=0=k_1[\ce{NO}]^2-k_{-1}[\ce{N_2O_2}]-k_2[\ce{N_2O_2}][\ce{H_2}]
+              \end{equation*}
+              This yields
+              \begin{equation*}
+                  [\ce{N_2O_2}]=\frac{k_1}{k_{-1}+k_2[\ce{H_2}]}[\ce{NO}]^2
+              \end{equation*}
+              For the SSA of $\ce{N_2O}$, we get
+              \begin{equation*}
+                  \dd{[\ce{N_2O}]}{t}=0=k_2[\ce{N_2O_2}][\ce{H_2}]-k_3[\ce{H_2}][\ce{N_2O}]
+              \end{equation*}
+              \begin{equation*}
+                  [\ce{N_2O}]=\frac{k_1k_2}{k_3(k_{-1}+k_2[\ce{H_2}])}[\ce{H_2}][\ce{NO}]^2
+              \end{equation*}
+              \begin{equation*}
+                  r_3=k_3[\ce{H_2}][\ce{N_2O}]=\frac{k_1k_2}{k_{-1}+k_2[\ce{H_2}]}[\ce{H_2}][\ce{NO}]^2
+              \end{equation*}
+              The propsed mechanism is consistent with the experimental rate observed only if
+              $k_{-1}\gg k_2$. That way, $r_3$ reduces to $\frac{k_1 k_2}{k_{-1}}[\ce{H_2}][\ce{NO}]^2$.
+    \end{enumerate}
+\end{solution}
+
+\item Consider the reaction
+\begin{equation*}
+    \ce{2F_2O -> 2F_2 +O_2}
+\end{equation*}
+Where the following mechanism has been suggested to explain it (chem.phys.lett.17,235(1972)).
+\begin{equation*}
+    \ce{F_2O + F_2O ->[k_1] F + OF + F_2O}
+\end{equation*}
+\begin{equation*}
+    \ce{F + F_2O ->[k_2] F_2 + OF}
+\end{equation*}
+\begin{equation*}
+    \ce{OF + OF ->[k_3] O_2 + F + F}
+\end{equation*}
+\begin{equation*}
+    \ce{F + F + F_2O ->[k_4] F_2 + F_2O}
+\end{equation*}
+Apply the steady state approximation to the reactive species OF and F to show the
+mechanism is consistent with the following experimental rate law:
+\begin{equation*}
+    -\dd{[\ce{F_2O}]}{t}=k[\ce{F_2O}]^2+k'[\ce{F_2O}]^{3/2}
+\end{equation*}
+and identify $k$ and $k'$.
+
+\begin{solution}\
+    \begin{equation*}
+        \dd{[\ce{OF}]}{t}=k_1[\ce{F_2O}]^2+k_2[\ce{F}][\ce{F_2O}]-k_3[\ce{OF}]^2=0
+    \end{equation*}
+    \begin{equation*}
+        \dd{[\ce{F}]}{t}=k_1[\ce{F_2O}]^2-k_2[\ce{F}][\ce{F_2O}]+k_3[\ce{OF}]^2-k_4[\ce{F}]^2[\ce{F_2O}]
+        =0
+    \end{equation*}
+    Adding this two SSA expressions yields
+    \begin{equation*}
+        2k_1[\ce{F_2O}]^2-k_4[\ce{F}]^2[\ce{F_2O}]=0
+    \end{equation*}
+    And thus
+    \begin{equation*}
+        [\ce{F}]=\left(\frac{2k_1[\ce{F_2O}]}{k_4}\right)^{\frac{1}{2}}
+    \end{equation*}
+    So,
+    \begin{equation*}
+        \begin{aligned}
+            -\dd{[\ce{F_2O}]}{t} & =k_1[\ce{F_2O}]^2+k_2[\ce{F}][\ce{F_2O}]+k_4[\ce{F}]^2[\ce{F_2O}]          \\
+                                 & =3k_1[\ce{F_2O}]^2+k_2\left(\frac{2k_1}{k_4}\right)^{1/2}[\ce{F_2O}]^{3/2}
+        \end{aligned}
+    \end{equation*}
+    where
+    \begin{equation*}
+        k=3k_1
+    \end{equation*}
+    \begin{equation*}
+        k'=k_2\left(\frac{2k_1}{k_4}\right)^{1/2}
+    \end{equation*}
+\end{solution}

@@ -1,0 +1,307 @@
+\item First consider some simple electronic partition functions:
+\begin{enumerate}
+    \item Consider a two-level system of $N$ particles separated by an energy of $hv$.
+          \begin{enumerate}
+              \item Derive expressions for $\bar{\sme},\bar{E}$ and $P_1$ as a function of $T$. $P_1$ is the
+                    probability that the system is in the higher energy level.
+              \item What are the limiting values for each of these at $T=0$ and $kT\gg hv$.
+              \item For a level spacing of 200 $cm^{-1}$ what is $T$ when $\bar{E}=Nhv$.
+              \item What is $P_1$ at the $T$ found in part iii?
+          \end{enumerate}
+    \item Answer the following questions.
+          \begin{enumerate}
+              \item Determine $\bar{E}$ for a three-level system separated by $hv$ between each level where the middle
+                    level is doubly degenerate.
+              \item Determine $\bar{E}$ for a level separation of 300 $cm^{-1}$ at 300 K.
+              \item Determine $P_1$ and $P_2$ under conditions of part iii above.
+          \end{enumerate}
+    \item A real system is the vanadium atom with the following electronic energy level scheme:
+          \begin{table}[!htb]
+              \begin{align*}
+                  \begin{tabular}{|c|c|c|}
+                      \hline
+                      Level & Energy (cm$^{-1})$ & Degeneracy \\
+                      \hline
+                      0     & 0                  & 4          \\
+                      \hline
+                      1     & 137.38             & 6          \\
+                      \hline
+                      2     & 323.46             & 8          \\
+                      \hline
+                      3     & 552.96             & 10         \\
+                      \hline
+                  \end{tabular}
+              \end{align*}
+          \end{table}
+          \begin{enumerate}
+              \item Calculate $\bar{E}$ at 300 K.
+              \item Calculate $T$ when $P_0=P_1$, $P_0=P_2$, and $P_2=P_3$.
+          \end{enumerate}
+\end{enumerate}
+
+\begin{solution}\
+    \begin{enumerate}
+        \item \begin{enumerate}
+                  \item The first energy level $\sme_1$ is set to zero, so the sencond energy level is $hv$.
+                        \begin{equation*}
+                            q=e^0+\hvkt=1+\hvkt
+                        \end{equation*}
+                        \begin{equation*}
+                            \bar{\sme}=kT^2\frac{\diff\ln q}{\diff T}=kT^2\frac{\diff\ln(1+\hvkt)}{\diff T}=\frac{hv}{1+e^{hv/kT}}
+                        \end{equation*}
+                        \begin{equation*}
+                            \bar{E}=N\bar{\sme}=\frac{Nhv}{1+e^{hv/kT}}
+                        \end{equation*}
+                        \begin{equation*}
+                            P_1=\frac{\hvkt}{q}=\frac{\hvkt}{1+\hvkt}
+                        \end{equation*}
+                  \item at $T=0$:
+                        \begin{equation*}
+                            \bar{\sme}=\lim_{T \to 0}\frac{hv}{1+e^{hv/kT}}=0
+                        \end{equation*}
+                        \begin{equation*}
+                            \bar{E}=N\bar{\sme}=0
+                        \end{equation*}
+                        \begin{equation*}
+                            P_1=\lim_{T\to 0}\frac{\hvkt}{1+\hvkt}=0
+                        \end{equation*}
+                        at $T=\infty$:
+                        \begin{equation*}
+                            \bar{\sme}=\lim_{T\to\infty}\frac{hv}{1+e^{hv/kT}}=\frac{hv}{1+1}=\frac{hv}{2}
+                        \end{equation*}
+                        \begin{equation*}
+                            \bar{E}=N\bar{\sme}=\frac{Nhv}{2}
+                        \end{equation*}
+                        \begin{equation*}
+                            P_1=\lim_{T\to\infty}\frac{\hvkt}{1+\hvkt}=\frac{1}{1+1}=\frac{1}{2}
+                        \end{equation*}
+                  \item \begin{equation*}
+                            \sme=hv=hc\tilde{v}=3.98\times 10^{-21}\text{ J}
+                        \end{equation*}
+                        \begin{equation*}
+                            e^{hv/kT}=2
+                        \end{equation*}
+                        This yields $T=415.6$ K.
+                  \item \begin{equation*}
+                            P_1=\frac{1}{1+e^{hv/kT}}=\frac{1}{3}
+                        \end{equation*}
+              \end{enumerate}
+        \item \begin{enumerate}
+                  \item \begin{equation*}
+                            q=1+2\hvkt+e^{-2hv/kT}
+                        \end{equation*}
+                        \begin{equation*}
+                            \begin{aligned}
+                                \bar{E} & =N\bar{\sme}=NkT^2\frac{\diff\ln q}{\diff T}     \\
+                                        & =NkT^2\left[\frac{2hv}{kT^2(e^{hv/kT}+1)}\right] \\
+                                        & =\frac{2Nhv}{e^{hv/kT}+1}
+                            \end{aligned}
+                        \end{equation*}
+                  \item \begin{equation*}
+                            \bar{E}=\frac{2Nhv}{e^{hv/kT}+1}=\frac{N\times1.19\times10^{-20}}{e^{1.44}+1}
+                            =2.28\times10^{-21}N
+                        \end{equation*}
+                  \item \begin{equation*}
+                            P_1=\frac{2\hvkt}{1+2\hvkt+e^{-2hv/kT}}=0.3097
+                        \end{equation*}
+                        \begin{equation*}
+                            P_2=\frac{e^{-2hv/kT}}{1+2\hvkt+e^{-2hv/kT}}=0.0367
+                        \end{equation*}
+              \end{enumerate}
+        \item \begin{enumerate}
+                  \item \begin{equation*}
+                            \begin{aligned}
+                                q & =4e^0+6e^{-\sme_1/kT}+8e^{-\sme_2/kT}+10e^{-\sme_3/kT} \\
+                                  & =4+6e^{-137.38/kT}+8e^{-323.46/kT}+10e^{-552.96/kT}
+                            \end{aligned}
+                        \end{equation*}
+                        \begin{equation*}
+                            \bar{E}=N_AkT^2\dd{\ln q}{T}=1710\text{ J}
+                        \end{equation*}
+                  \item When $P_0=P_1$,
+                        \begin{equation*}
+                            \frac{4}{q}=\frac{6e^{-\sme_1/kT}}{q}
+                        \end{equation*}
+                        So $T=488.6$ K.\\
+                        When $P_0=P_2$,
+                        \begin{equation*}
+                            \frac{4}{q}=\frac{8e^{-\sme_2/kT}}{q}
+                        \end{equation*}
+                        So $T=672.2$ K.\\
+                        And when $P_2=P_3$,
+                        \begin{equation*}
+                            \frac{8e^{-\sme_2/kT}}{q}=\frac{10e^{-\sme_3/kT}}{q}
+                        \end{equation*}
+                        So $T=1482.5$ K.
+              \end{enumerate}
+    \end{enumerate}
+\end{solution}
+
+\item The following questions deal with the entropy of a system. Standard state is $p=1$ bar and $T=298$ K
+\begin{enumerate}
+    \item Determine the standard molar entropy for \ce{N_2O}, a linear triatomic molecule
+          where $\tilde{B}=0.419\text{ cm}^{-1},\tilde{v_1}=1285\text{ cm}^{-1},\tilde{v_2}=589\text{ cm}^{-1}
+              \text{(doubly degenerate)}$, and $\tilde{v_3}=2224\text{ cm}^{-1}$.
+    \item The standard molar entropy of \ce{O_2} is 205.14 J mol$^{-1}$K$^{-1}$ and $\tilde{v}=1580$ cm$^{-1}$
+          and the electronic ground state is triply degenerate. Determine the bond length of \ce{O_2}
+          from this information.
+    \item Answer the following questions.
+          \begin{enumerate}
+              \item Calculate the molar electronic entropy of the vanadium atom (see question 1.c)
+                    at 300 K and 1000 K.
+              \item Compare it to the translational entropy of vanadium at these two temperatures.
+              \item What is the maximum electronic entropy of vanadium (where $T\gg E/k$)
+                    assuming only the states given in 1.c.
+          \end{enumerate}
+\end{enumerate}
+
+\begin{solution}\
+    \begin{enumerate}
+        \item \begin{equation*}
+                  S_{tot}=\frac{\bar{E}_{tot}}{T}+R\left(1+\ln\frac{q_{tot}}{N_A}\right)
+              \end{equation*}
+              Also,
+              \begin{equation*}
+                  S_{tot}=S_{trans}+S_{rot}+S_{vib}+S_{el}
+              \end{equation*}
+              For translational contribution,
+              \begin{equation*}
+                  q_T=\frac{L^3}{h^3}(2\pi mkT)^{3/2}
+              \end{equation*}
+              \begin{equation*}
+                  L^3=V=\frac{nRT}{p}=24.52\times10^{-3}\text{ m}^3
+              \end{equation*}
+              Plugging in other values yields $q_t = 6.932\times10^{30}$.
+
+              At 298 K, we are at high temperature limit where $\bar{E}_{trans}=\frac{3}{2}RT$.
+              \begin{equation*}
+                  S_{trans}=R(\frac{3}{2}+1+\ln\frac{q_{trans}}{N_A})=155.9614\text{ J/K/mol}
+              \end{equation*}
+              For rotational contribution,
+              \begin{equation*}
+                  S_{rot}=\frac{\bar{E}_{rot}}{T}+R\ln q_{rot}
+              \end{equation*}
+              The high temperature partition function is
+              \begin{equation*}
+                  q_{rot}=\frac{T}{\sigma\theta_R}
+              \end{equation*}
+              And we also know
+              \begin{equation*}
+                  S_D=R\left(\ln q + T\frac{\diff\ln q}{\diff T}\right)
+              \end{equation*}
+              So,
+              \begin{equation*}
+                  \begin{aligned}
+                      S_{rot} & =R\left(\ln\frac{T}{\sigma\theta_R}+T\pd{\ln\frac{T}{\sigma\theta_R}}{T}\right) \\
+                              & =R\left(\ln\frac{T}{\sigma\theta_R}+1\right)
+                  \end{aligned}
+              \end{equation*}
+              \begin{equation*}
+                  \theta_R=\frac{hc\tilde{B}}{k_B}=0.602
+              \end{equation*}
+              So,
+              \begin{equation*}
+                  S_{rot}=59.88\text{ J/K/mol}
+              \end{equation*}
+              And for vibrational contribution, the partition function is
+              \begin{equation*}
+                  q_{vib}=\left(\frac{1}{1-e^{-\theta_{V1}/T}}\right)\left(\frac{1}{1-e^{-\theta_{V2}/T}}\right)^2
+                  \left(\frac{1}{1-e^{-\theta_{V3}/T}}\right)
+              \end{equation*}
+              where the vibrational temperature is calculated by
+              \begin{equation*}
+                  \theta_V=\frac{hc\tilde{v}}{k_B}
+              \end{equation*}
+              \begin{tcolorbox}
+                  \begin{equation*}
+                      q_{vib}=\frac{e^{-hv/2kT}}{1-e^{hv/kT}}\approx\frac{1}{1-e^{-hv/kT}}\text{ (ignore zero point)}
+                  \end{equation*}
+              \end{tcolorbox}
+              \begin{equation*}
+                  \begin{aligned}
+                      \bar{E}_{vib} & =R\pd{\ln q_{vib}}{T}                                                               \\
+                                    & =\frac{R\theta_{V1}}{e^{\theta_{V1}/T}-1}+\frac{2R\theta_{V2}}{e^{\theta_{V2}/T}-1}
+                      +\frac{R\theta_{V3}}{e^{\theta_{V3}/T}-1}                                                           \\
+                                    & =902.126\text{ J/mol}
+                  \end{aligned}
+              \end{equation*}
+              And $R\ln q_{vib}=1.013$ J/K/mol.
+              So,
+              \begin{equation*}
+                  S_{vib}=\frac{\bar{E}_{vib}}{T}+R\ln q_{vib}=4.04\text{ J/K/mol}
+              \end{equation*}
+              \begin{equation*}
+                  S_{tot}=155.9614+59.88+4.04+0=219.88\text{ J/K/mol}
+              \end{equation*}
+        \item \begin{equation*}
+                  S_{trans}=R\left(\frac{3}{2}+1+\ln\frac{q_{trans}}{N_A}\right)=151.986\text{ J/K/mol}
+              \end{equation*}
+              \begin{equation*}
+                  S_{el}=R\ln3=9.134\text{ J/K/mol}
+              \end{equation*}
+              \begin{tcolorbox}
+                  For most system, $\sme_{el}=\sme_0=0$, so
+                  \begin{equation*}
+                      S_{el}=\frac{E_{el}}{T}+R\ln q_{el}\approx R\ln g_0
+                  \end{equation*}
+              \end{tcolorbox}
+              \begin{equation*}
+                  \theta_v=\frac{hc\tilde{v}}{k_B}=2273.83\text{ K}
+              \end{equation*}
+              \begin{equation*}
+                  S_{vib}=\frac{1}{T}\frac{R\theta_v}{e^{\theta_V/T}-1}+R\ln\frac{1}{1-e^{-\theta_V/T}}
+                  =0.0348\text{ J/K/mol}
+              \end{equation*}
+              So, we can get the rotational entropy.
+              \begin{equation*}
+                  S_{rot}=S_{tot}-S_{trans}-S_{elec}-S_{vib}=43.985\text{ J/K/mol}
+              \end{equation*}
+              Also,
+              \begin{equation*}
+                  S_{rot}=R\left(\ln\frac{T}{\sigma\theta_R}+1\right)
+              \end{equation*}
+              So,
+              \begin{equation*}
+                  \theta_R=\frac{T}{\sigma e^{43.985/R-1}}=2.041\text{ K}=\frac{hc\tilde{B}}{k_B}
+              \end{equation*}
+              This yields $\tilde{B}=1.418$. From the definition of $\tilde{B}$ we know that
+              \begin{equation*}
+                  \tilde{B}=\frac{\hbar}{4\pi c\mu R^2}
+              \end{equation*}
+              So, $R=122$ pm.
+        \item \begin{enumerate}
+                  \item \begin{equation*}
+                            S_{el}=R\ln q_{el}+\frac{\bar{E}}{T}
+                        \end{equation*}
+                        \begin{equation*}
+                            q_{el}=g_0e^{-\beta\sme_0}+g_1e^{-\beta\sme_1}+g_2e^{-\beta\sme_2}+g_3e^{-\beta\sme_3}
+                        \end{equation*}
+                        \begin{equation*}
+                            \bar{E}=R\dd{\ln q_{el}}{T}=R\dd{}{T}(-\beta\sme_1-\beta\sme_2-\beta\sme_3)
+                        \end{equation*}
+                        At 300 K, $q_{el}=9.50564$, $\bar{E}=0.1346$ J, $S_{el}=18.722$ J/K/mol.
+                        At 1000 K, $q_{el}=18.462$, $\bar{E}=0.0121$ J, $S_{el}=24.241$ J/K/mol.
+                  \item \begin{equation*}
+                            q_{trans}=\frac{L^3}{h^3}(2\pi mkT)^{3/2}
+                        \end{equation*}
+                        \begin{equation*}
+                            S_{trans}=R\left(\frac{3}{2}+1+\ln\frac{q_{trans}}{N_A}\right)
+                        \end{equation*}
+                        At 300 K, $q_{trans}=8.709\times10^{30}$, $S_{trans}=158$ J/K/mol.
+                        At 1000 K, $q_{trans}=5.300\times10^{31}$, $S_{trans}=183.03$ J/K/mol.
+                        $S_{trans}$ is much greater than $S_{el}$.
+                  \item When $kT\rightarrow\infty$, the exponential terms approches to 1. So,
+                        \begin{equation*}
+                            q_{el}\approx g_0+g_1+g_2+g_3=28
+                        \end{equation*}
+                        \begin{equation*}
+                            \bar{E}=R\dd{\ln q}{T}=R\left(\frac{\sme_1}{k_BT^2}+\frac{\sme_2}{k_BT^2}
+                            +\frac{\sme_3}{k_BT^2}\right)\approx 0
+                        \end{equation*}
+                        So, the maximum entropy is
+                        \begin{equation*}
+                            S_{el}=R\ln28=27.703\text{ J/K/mol}
+                        \end{equation*}
+              \end{enumerate}
+    \end{enumerate}
+\end{solution}
